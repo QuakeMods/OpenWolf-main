@@ -2381,7 +2381,7 @@ textures/eX/eX_light_u201_lit_1000
 {
 	q3map_material SolidMetal
 	surfaceparm alphashadow
-	qer_editorimage	textures/eX/eX_light_u201_c
+	qer_editorimage	textures/eX/eX_light_u201_d
 	{
 		stage diffuseMap
 		map textures/eX/eX_light_u201_d
