@@ -1,33 +1,29 @@
 // written for ioquake3/renderergl2 by mega, aka odin
 // original by evillair
+// eX (C) 2018 Dusan Jocic <dusanjocic@msn.com>
 
 textures/eX/eX_clangfloor_01_d
 {
 	q3map_material SolidMetal
-	qer_editorimage textures/eX/eX_clangfloor_01_c
+	qer_editorimage textures/eX/eX_clangfloor_01_d
 	{
 		stage diffuseMap
 		map textures/eX/eX_clangfloor_01_d
 	}
 	{
-		stage normalMap
-		map textures/eX/eX_clangfloor_01_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
-	}
-	{
 		stage normalParallaxMap
 		map textures/eX/eX_clangfloor_01_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
+		normalscale 1.1 1.1 1.5
+		parallaxDepth 0.05
 		tcMod scale .5 .5
 	}
 	{
 		stage specularMap
 		map textures/eX/eX_clangfloor_01_s
 		specularreflectance 0.52050
-		specularexponent 128
-		specularScale 1.5 1.0 1.1 1.3
+		specularexponent 16
+		specularScale 0.36 0.54 0.66
+		roughness 0.124
 	}
 	{
 		map $lightmap
@@ -45,24 +41,19 @@ textures/eX/eX_clangfloor_01b_d
 		map textures/eX/eX_clangfloor_01b_d
 	}
 	{
-		stage normalMap
-		map textures/eX/eX_clangfloor_01_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
-	}
-	{
 		stage normalParallaxMap
 		map textures/eX/eX_clangfloor_01_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
+		normalscale 1.1 1.1 1.5
+		parallaxDepth 0.05
 		tcMod scale .5 .5
 	}
 	{
 		stage specularMap
 		map textures/eX/eX_clangfloor_01_s
 		specularreflectance 0.52050
-		specularexponent 128
-		specularScale 1.5 1.0 1.1 1.3
+		specularexponent 16
+		specularScale 0.36 0.54 0.66
+		roughness 0.124
 	}
 	{
 		map $lightmap
@@ -74,21 +65,16 @@ textures/eX/eX_cretebase_01_d
 {
 	q3map_material SolidMetal
 	qer_editorimage	textures/eX/eX_cretebase_01_c
+	q3map_material SolidMetal
 	{
 		stage diffuseMap
 		map textures/eX/eX_cretebase_01_d
 	}
 	{
-		stage normalMap
-		map textures/eX/eX_cretebase_01_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
-	}
-	{
 		stage normalParallaxMap
 		map textures/eX/eX_cretebase_01_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
+		normalscale 1.1 1.1 1.5
+		parallaxDepth 0.05
 		tcMod scale .5 .5
 	}
 	{
@@ -96,6 +82,8 @@ textures/eX/eX_cretebase_01_d
 		map textures/eX/eX_cretebase_01_s
 		specularreflectance 0.52050
 		specularexponent 64
+		specularScale 0.36 0.54 0.66
+		roughness 0.124
 	}
 	{
 		map $lightmap
@@ -106,29 +94,25 @@ textures/eX/eX_cretebase_01_d
 textures/eX/eX_cretebase_02_d
 {
 	q3map_material SolidMetal
-	qer_editorimage	textures/eX/eX_cretebase_02_c
+	qer_editorimage	textures/eX/eX_cretebase_02_d
+	q3map_material SolidMetal
 	{
 		stage diffuseMap
 		map textures/eX/eX_cretebase_02_d
 	}
 	{
-		stage normalMap
-		map textures/eX/eX_cretebase_01_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
-	}
-	{
 		stage normalParallaxMap
 		map textures/eX/eX_cretebase_01_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
-		tcMod scale .5 .5
+		normalscale 1.1 1.1 1.5
+		parallaxDepth 0.05
 	}
 	{
 		stage specularMap
 		map textures/eX/eX_cretebase_01_s
 		specularreflectance 0.52050
 		specularexponent 64
+		specularScale 0.36 0.54 0.66
+		roughness 0.124
 	}
 	{
 		map $lightmap
@@ -139,22 +123,16 @@ textures/eX/eX_cretebase_02_d
 textures/eX/eX_cretebase_03_dark_d
 {
 	q3map_material SolidMetal
-	qer_editorimage	textures/eX/eX_cretebase_03_dark_c
+	qer_editorimage	textures/eX/eX_cretebase_03_dark_d
 	{
 		stage diffuseMap
 		map textures/eX/eX_cretebase_03_dark_d
 	}
 	{
-		stage normalMap
-		map textures/eX/eX_cretebase_01_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
-	}
-	{
 		stage normalParallaxMap
 		map textures/eX/eX_cretebase_01_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
+		normalscale 1.1 1.1 1.5
+		parallaxDepth 0.05
 		tcMod scale .5 .5
 	}
 	{
@@ -162,6 +140,8 @@ textures/eX/eX_cretebase_03_dark_d
 		map textures/eX/eX_cretebase_01_s
 		specularreflectance 0.52050
 		specularexponent 64
+		specularScale 0.36 0.54 0.66
+		roughness 0.124
 	}
 	{
 		map $lightmap
@@ -172,22 +152,16 @@ textures/eX/eX_cretebase_03_dark_d
 textures/eX/eX_cretefloor_01_d
 {
 	q3map_material SolidMetal
-	qer_editorimage	textures/eX/eX_cretefloor_01_c
+	qer_editorimage	textures/eX/eX_cretefloor_01_d
 	{
 		stage diffuseMap
 		map textures/eX/eX_cretefloor_01_d
 	}
 	{
-		stage normalMap
-		map textures/eX/eX_cretefloor_01_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
-	}
-	{
 		stage normalParallaxMap
 		map textures/eX/eX_cretefloor_01_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
+		normalscale 1.1 1.1 1.5
+		parallaxDepth 0.05
 		tcMod scale .5 .5
 	}
 	{
@@ -195,6 +169,8 @@ textures/eX/eX_cretefloor_01_d
 		map textures/eX/eX_cretefloor_01_s
 		specularreflectance 0.52050
 		specularexponent 64
+		specularScale 0.36 0.54 0.66
+		roughness 0.124
 	}
 	{
 		map $lightmap
@@ -205,22 +181,16 @@ textures/eX/eX_cretefloor_01_d
 textures/eX/eX_cretefloor_01b_d
 {
 	q3map_material SolidMetal
-	qer_editorimage	textures/eX/eX_cretefloor_01b_c
+	qer_editorimage	textures/eX/eX_cretefloor_01b_d
 	{
 		stage diffuseMap
 		map textures/eX/eX_cretefloor_01b_d
 	}
 	{
-		stage normalMap
-		map textures/eX/eX_cretefloor_01b_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
-	}
-	{
 		stage normalParallaxMap
 		map textures/eX/eX_cretefloor_01b_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
+		normalscale 1.1 1.1 1.5
+		parallaxDepth 0.05
 		tcMod scale .5 .5
 	}
 	{
@@ -228,6 +198,8 @@ textures/eX/eX_cretefloor_01b_d
 		map textures/eX/eX_cretefloor_01b_s
 		specularreflectance 0.52050
 		specularexponent 64
+		specularScale 0.36 0.54 0.66
+		roughness 0.124
 	}
 	{
 		map $lightmap
@@ -238,22 +210,16 @@ textures/eX/eX_cretefloor_01b_d
 textures/eX/eX_cretewall_01_d
 {
 	q3map_material SolidMetal
-	qer_editorimage	textures/eX/eX_cretewall_01_c
+	qer_editorimage	textures/eX/eX_cretewall_01_d
 	{
 		stage diffuseMap
 		map textures/eX/eX_cretewall_01_d
 	}
 	{
-		stage normalMap
-		map textures/eX/eX_cretewall_01_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
-	}
-	{
 		stage normalParallaxMap
 		map textures/eX/eX_cretewall_01_d_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
+		normalscale 1.1 1.1 1.5
+		parallaxDepth 0.05
 		tcMod scale .5 .5
 	}
 	{
@@ -261,6 +227,8 @@ textures/eX/eX_cretewall_01_d
 		map textures/eX/eX_cretewall_01_s
 		specularreflectance 0.52050
 		specularexponent 64
+		specularScale 0.36 0.54 0.66
+		roughness 0.124
 	}
 	{
 		map $lightmap
@@ -271,22 +239,16 @@ textures/eX/eX_cretewall_01_d
 textures/eX/eX_cretewall_02_d
 {
 	q3map_material SolidMetal
-	qer_editorimage	textures/eX/eX_cretewall_02_c
+	qer_editorimage	textures/eX/eX_cretewall_02_d
 	{
 		stage diffuseMap
 		map textures/eX/eX_cretewall_02_d
 	}
 	{
-		stage normalMap
-		map textures/eX/eX_cretewall_02_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
-	}
-	{
 		stage normalParallaxMap
 		map textures/eX/eX_cretewall_02_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
+		normalscale 1.1 1.1 1.5
+		parallaxDepth 0.05
 		tcMod scale .5 .5
 	}
 	{
@@ -294,6 +256,8 @@ textures/eX/eX_cretewall_02_d
 		map textures/eX/eX_cretewall_02_s
 		specularreflectance 0.52050
 		specularexponent 64
+		specularScale 0.36 0.54 0.66
+		roughness 0.124
 	}
 	{
 		map $lightmap
@@ -304,22 +268,16 @@ textures/eX/eX_cretewall_02_d
 textures/eX/eX_cretewall_03_d
 {
 	q3map_material SolidMetal
-	qer_editorimage	textures/eX/eX_cretewall_03_c
+	qer_editorimage	textures/eX/eX_cretewall_03_d
 	{
 		stage diffuseMap
 		map textures/eX/eX_cretewall_03_d
 	}
 	{
-		stage normalMap
-		map textures/eX/eX_cretewall_03_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
-	}
-	{
 		stage normalParallaxMap
 		map textures/eX/eX_cretewall_03_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
+		normalscale 1.1 1.1 1.5
+		parallaxDepth 0.05
 		tcMod scale .5 .5
 	}
 	{
@@ -327,6 +285,8 @@ textures/eX/eX_cretewall_03_d
 		map textures/eX/eX_cretewall_03_s
 		specularreflectance 0.52050
 		specularexponent 64
+		specularScale 0.36 0.54 0.66
+		roughness 0.124
 	}
 	{
 		map $lightmap
@@ -337,22 +297,16 @@ textures/eX/eX_cretewall_03_d
 textures/eX/eX_cretewall_03b_d
 {
 	q3map_material SolidMetal
-	qer_editorimage	textures/eX/eX_cretewall_03b_c
+	qer_editorimage	textures/eX/eX_cretewall_03b_d
 	{
 		stage diffuseMap
 		map textures/eX/eX_cretewall_03b_d
 	}
 	{
-		stage normalMap
-		map textures/eX/eX_cretewall_03b_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
-	}
-	{
 		stage normalParallaxMap
 		map textures/eX/eX_cretewall_03b_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
+		normalscale 1.1 1.1 1.5
+		parallaxDepth 0.05
 		tcMod scale .5 .5
 	}
 	{
@@ -360,6 +314,8 @@ textures/eX/eX_cretewall_03b_d
 		map textures/eX/eX_cretewall_03b_s
 		specularreflectance 0.52050
 		specularexponent 64
+		specularScale 0.36 0.54 0.66
+		roughness 0.124
 	}
 	{
 		map $lightmap
@@ -370,30 +326,25 @@ textures/eX/eX_cretewall_03b_d
 textures/eX/eX_deswall_01_d
 {
 	q3map_material SolidMetal
-	qer_editorimage	textures/eX/eX_deswall_01_c
+	qer_editorimage	textures/eX/eX_deswall_01_d
 	{
 		stage diffuseMap
 		map textures/eX/eX_deswall_01_d
 	}
 	{
-		stage normalMap
-		map textures/eX/eX_deswall_01_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
-	}
-	{
 		stage normalParallaxMap
 		map textures/eX/eX_deswall_01_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
+		normalscale 1.1 1.1 1.5
+		parallaxDepth 0.05
 		tcMod scale .5 .5
 	}
 	{
 		stage specularMap
 		map textures/eX/eX_deswall_01_s
 		specularreflectance 0.52050
-		specularexponent 128
-		specularScale 1.5 1.0 1.1 1.3
+		specularexponent 16
+		specularScale 0.36 0.54 0.66
+		roughness 0.124
 	}
 	{
 		map $lightmap
@@ -404,31 +355,26 @@ textures/eX/eX_deswall_01_d
 textures/eX/eX_floor_grate03_d
 {
 	q3map_material SolidMetal
-	qer_editorimage	textures/eX/eX_floor_grate03_c
+	qer_editorimage	textures/eX/eX_floor_grate03_d
 	surfaceparm metalsteps
 	{
 		stage diffuseMap
 		map textures/eX/eX_floor_grate03_d
 	}
 	{
-		stage normalMap
-		map textures/eX/eX_floor_grate03_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
-	}
-	{
 		stage normalParallaxMap
 		map textures/eX/eX_floor_grate03_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
+		normalscale 1.1 1.1 1.5
+		parallaxDepth 0.05
 		tcMod scale .5 .5
 	}
 	{
 		stage specularMap
 		map textures/eX/eX_floor_grate03_s
 		specularreflectance 0.52050
-		specularexponent 128
-		specularScale 1.5 1.0 1.1 1.3
+		specularexponent 16
+		specularScale 0.36 0.54 0.66
+		roughness 0.124
 	}
 	{
 		map $lightmap
@@ -439,7 +385,7 @@ textures/eX/eX_floor_grate03_d
 textures/eX/eX_floor_grate03_trans
 {
 	q3map_material SolidMetal
-	qer_editorimage	textures/eX/eX_floor_grate03_c
+	qer_editorimage	textures/eX/eX_floor_grate03_d
 	surfaceparm metalsteps
 	cull none
 	{
@@ -449,24 +395,19 @@ textures/eX/eX_floor_grate03_trans
 		depthwrite
 	}
 	{
-		stage normalMap
-		map textures/eX/eX_floor_grate03_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
-	}
-	{
 		stage normalParallaxMap
 		map textures/eX/eX_floor_grate03_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
+		normalscale 1.1 1.1 1.5
+		parallaxDepth 0.05
 		tcMod scale .5 .5
 	}
 	{
 		stage specularMap
 		map textures/eX/eX_floor_grate03_s
 		specularreflectance 0.52050
-		specularexponent 128
-		specularScale 1.5 1.0 1.1 1.3
+		specularexponent 16
+		specularScale 0.36 0.54 0.66
+		roughness 0.124
 	}
 	{
 		map $lightmap
@@ -478,31 +419,26 @@ textures/eX/eX_floor_grate03_trans
 textures/eX/eX_floor_grate_03_128_d
 {
 	q3map_material SolidMetal
-	qer_editorimage	textures/eX/eX_floor_grate_03_128_c
+	qer_editorimage	textures/eX/eX_floor_grate_03_128_d
 	surfaceparm metalsteps
 	{
 		stage diffuseMap
 		map textures/eX/eX_floor_grate_03_128_d
 	}
 	{
-		stage normalMap
-		map textures/eX/eX_floor_grate_03_128_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
-	}
-	{
 		stage normalParallaxMap
 		map textures/eX/eX_floor_grate_03_128_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
+		normalscale 1.1 1.1 1.5
+		parallaxDepth 0.05
 		tcMod scale .5 .5
 	}
 	{
 		stage specularMap
 		map textures/eX/eX_floor_grate_03_128_s
 		specularreflectance 0.52050
-		specularexponent 128
-		specularScale 1.5 1.0 1.1 1.3
+		specularexponent 16
+		specularScale 0.36 0.54 0.66
+		roughness 0.124
 	}
 	{
 		map $lightmap
@@ -513,7 +449,7 @@ textures/eX/eX_floor_grate_03_128_d
 textures/eX/eX_floor_grate_03_128_trans
 {
 	q3map_material SolidMetal
-	qer_editorimage	textures/eX/eX_floor_grate_03_128_c
+	qer_editorimage	textures/eX/eX_floor_grate_03_128_d
 	surfaceparm metalsteps
 	cull none
 	{
@@ -523,24 +459,19 @@ textures/eX/eX_floor_grate_03_128_trans
 		depthwrite
 	}
 	{
-		stage normalMap
-		map textures/eX/eX_floor_grate_03_128_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
-	}
-	{
 		stage normalParallaxMap
 		map textures/eX/eX_floor_grate_03_128_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
+		normalscale 1.1 1.1 1.5
+		parallaxDepth 0.05
 		tcMod scale .5 .5
 	}
 	{
 		stage specularMap
 		map textures/eX/eX_floor_grate_03_128_s
 		specularreflectance 0.52050
-		specularexponent 128
-		specularScale 1.5 1.0 1.1 1.3
+		specularexponent 16
+		specularScale 0.36 0.54 0.66
+		roughness 0.124
 	}
 	{
 		map $lightmap
@@ -552,31 +483,26 @@ textures/eX/eX_floor_grate_03_128_trans
 textures/eX/eX_floor_grate_03_d
 {
 	q3map_material SolidMetal
-	qer_editorimage	textures/eX/eX_floor_grate_03_c
+	qer_editorimage	textures/eX/eX_floor_grate_03_d
 	surfaceparm metalsteps
 	{
 		stage diffuseMap
 		map textures/eX/eX_floor_grate_03_d
 	}
 	{
-		stage normalMap
-		map textures/eX/eX_floor_grate_03_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
-	}
-	{
 		stage normalParallaxMap
 		map textures/eX/eX_floor_grate_03_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
+		normalscale 1.1 1.1 1.5
+		parallaxDepth 0.05
 		tcMod scale .5 .5
 	}
 	{
 		stage specularMap
 		map textures/eX/eX_floor_grate_03_s
 		specularreflectance 0.52050
-		specularexponent 128
-		specularScale 1.5 1.0 1.1 1.3
+		specularexponent 16
+		specularScale 0.36 0.54 0.66
+		roughness 0.124
 	}
 	{
 		map $lightmap
@@ -587,7 +513,7 @@ textures/eX/eX_floor_grate_03_d
 textures/eX/eX_floor_grate_03_trans
 {
 	q3map_material SolidMetal
-	qer_editorimage	textures/eX/eX_floor_grate_03_c
+	qer_editorimage	textures/eX/eX_floor_grate_03_d
 	surfaceparm metalsteps
 	cull none
 	{
@@ -597,24 +523,19 @@ textures/eX/eX_floor_grate_03_trans
 		depthwrite
 	}
 	{
-		stage normalMap
-		map textures/eX/eX_floor_grate_03_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
-	}
-	{
 		stage normalParallaxMap
 		map textures/eX/eX_floor_grate_03_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
+		normalscale 1.1 1.1 1.5
+		parallaxDepth 0.05
 		tcMod scale .5 .5
 	}
 	{
 		stage specularMap
 		map textures/eX/eX_floor_grate_03_s
 		specularreflectance 0.52050
-		specularexponent 128
-		specularScale 1.5 1.0 1.1 1.3
+		specularexponent 16
+		specularScale 0.36 0.54 0.66
+		roughness 0.124
 	}
 	{
 		map $lightmap
@@ -626,31 +547,26 @@ textures/eX/eX_floor_grate_03_trans
 textures/eX/eX_floor_mtl_grate_01_d
 {
 	q3map_material SolidMetal
-	qer_editorimage	textures/eX/eX_floor_mtl_grate_01_c
+	qer_editorimage	textures/eX/eX_floor_mtl_grate_01_d
 	surfaceparm metalsteps
 	{
 		stage diffuseMap
 		map textures/eX/eX_floor_mtl_grate_01_d
 	}
 	{
-		stage normalMap
-		map textures/eX/eX_floor_mtl_grate_01_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
-	}
-	{
 		stage normalParallaxMap
 		map textures/eX/eX_floor_mtl_grate_01_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
+		normalscale 1.1 1.1 1.5
+		parallaxDepth 0.05
 		tcMod scale .5 .5
 	}
 	{
 		stage specularMap
 		map textures/eX/eX_floor_mtl_grate_01_s
 		specularreflectance 0.52050
-		specularexponent 128
-		specularScale 1.5 1.0 1.1 1.3
+		specularexponent 16
+		specularScale 0.36 0.54 0.66
+		roughness 0.124
 	}
 	{
 		map $lightmap
@@ -661,7 +577,7 @@ textures/eX/eX_floor_mtl_grate_01_d
 textures/eX/eX_floor_mtl_grate_01_trans
 {
 	q3map_material SolidMetal
-	qer_editorimage	textures/eX/eX_floor_mtl_grate_01_c
+	qer_editorimage	textures/eX/eX_floor_mtl_grate_01_d
 	surfaceparm metalsteps
 	cull none
 	{
@@ -671,24 +587,19 @@ textures/eX/eX_floor_mtl_grate_01_trans
 		depthwrite
 	}
 	{
-		stage normalMap
-		map textures/eX/eX_floor_mtl_grate_01_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
-	}
-	{
 		stage normalParallaxMap
 		map textures/eX/eX_floor_mtl_grate_01_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
+		normalscale 1.1 1.1 1.5
+		parallaxDepth 0.05
 		tcMod scale .5 .5
 	}
 	{
 		stage specularMap
 		map textures/eX/eX_floor_mtl_grate_01_s
 		specularreflectance 0.52050
-		specularexponent 128
-		specularScale 1.5 1.0 1.1 1.3
+		specularexponent 16
+		specularScale 0.36 0.54 0.66
+		roughness 0.124
 	}
 	{
 		map $lightmap
@@ -700,30 +611,25 @@ textures/eX/eX_floor_mtl_grate_01_trans
 textures/eX/eX_floor_mtl_wrn_01_d
 {
 	q3map_material SolidMetal
-	qer_editorimage	textures/eX/eX_floor_mtl_wrn_01_c
+	qer_editorimage	textures/eX/eX_floor_mtl_wrn_01_d
 	{
 		stage diffuseMap
 		map textures/eX/eX_floor_mtl_wrn_01_d
 	}
 	{
-		stage normalMap
-		map textures/eX/eX_floor_mtl_wrn_01_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
-	}
-	{
 		stage normalParallaxMap
 		map textures/eX/eX_floor_mtl_wrn_01_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
+		normalscale 1.1 1.1 1.5
+		parallaxDepth 0.05
 		tcMod scale .5 .5
 	}
 	{
 		stage specularMap
 		map textures/eX/eX_floor_mtl_wrn_01_s
 		specularreflectance 0.52050
-		specularexponent 128
-		specularScale 1.5 1.0 1.1 1.3
+		specularexponent 16
+		specularScale 0.36 0.54 0.66
+		roughness 0.124
 	}
 	{
 		map $lightmap
@@ -734,30 +640,25 @@ textures/eX/eX_floor_mtl_wrn_01_d
 textures/eX/eX_floor_simple_05_d
 {
 	q3map_material SolidMetal
-	qer_editorimage	textures/eX/eX_floor_simple_05_c
+	qer_editorimage	textures/eX/eX_floor_simple_05_d
 	{
 		stage diffuseMap
 		map textures/eX/eX_floor_simple_05_d
 	}
 	{
-		stage normalMap
-		map textures/eX/eX_floor_simple_05_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
-	}
-	{
 		stage normalParallaxMap
 		map textures/eX/eX_floor_simple_05_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
+		normalscale 1.1 1.1 1.5
+		parallaxDepth 0.05
 		tcMod scale .5 .5
 	}
 	{
 		stage specularMap
 		map textures/eX/eX_floor_simple_05_s
 		specularreflectance 0.52050
-		specularexponent 128
-		specularScale 1.5 1.0 1.1 1.3
+		specularexponent 16
+		specularScale 0.36 0.54 0.66
+		roughness 0.124
 	}
 	{
 		map $lightmap
@@ -768,30 +669,25 @@ textures/eX/eX_floor_simple_05_d
 textures/eX/eX_floor_simplines_d
 {
 	q3map_material SolidMetal
-	qer_editorimage	textures/eX/eX_floor_simplines_c
+	qer_editorimage	textures/eX/eX_floor_simplines_d
 	{
 		stage diffuseMap
 		map textures/eX/eX_floor_simplines_d
 	}
 	{
-		stage normalMap
-		map textures/eX/eX_floor_simplines_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
-	}
-	{
 		stage normalParallaxMap
 		map textures/eX/eX_floor_simplines_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
+		normalscale 1.1 1.1 1.5
+		parallaxDepth 0.05
 		tcMod scale .5 .5
 	}
 	{
 		stage specularMap
 		map textures/eX/eX_floor_simplines_s
 		specularreflectance 0.52050
-		specularexponent 128
-		specularScale 1.5 1.0 1.1 1.3
+		specularexponent 16
+		specularScale 0.36 0.54 0.66
+		roughness 0.124
 	}
 	{
 		map $lightmap
@@ -802,30 +698,25 @@ textures/eX/eX_floor_simplines_d
 textures/eX/eX_floor_tile_03_d
 {
 	q3map_material SolidMetal
-	qer_editorimage	textures/eX/eX_floor_tile_03_c
+	qer_editorimage	textures/eX/eX_floor_tile_03_d
 	{
 		stage diffuseMap
 		map textures/eX/eX_floor_tile_03_d
 	}
 	{
-		stage normalMap
-		map textures/eX/eX_floor_tile_03_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
-	}
-	{
 		stage normalParallaxMap
 		map textures/eX/eX_floor_tile_03_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
+		normalscale 1.1 1.1 1.5
+		parallaxDepth 0.05
 		tcMod scale .5 .5
 	}
 	{
 		stage specularMap
 		map textures/eX/eX_floor_tile_03_s
 		specularreflectance 0.52050
-		specularexponent 128
-		specularScale 1.5 1.0 1.1 1.3
+		specularexponent 16
+		specularScale 0.36 0.54 0.66
+		roughness 0.124
 	}
 	{
 		map $lightmap
@@ -836,30 +727,25 @@ textures/eX/eX_floor_tile_03_d
 textures/eX/eX_floor_tread_01_d
 {
 	q3map_material SolidMetal
-	qer_editorimage	textures/eX/eX_floor_tread_01_c
+	qer_editorimage	textures/eX/eX_floor_tread_01_d
 	{
 		stage diffuseMap
 		map textures/eX/eX_floor_tread_01_d
 	}
 	{
-		stage normalMap
-		map textures/eX/eX_floor_tread_01_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
-	}
-	{
 		stage normalParallaxMap
 		map textures/eX/eX_floor_tread_01_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
+		normalscale 1.1 1.1 1.5
+		parallaxDepth 0.05
 		tcMod scale .5 .5
 	}
 	{
 		stage specularMap
 		map textures/eX/eX_floor_tread_01_s
 		specularreflectance 0.52050
-		specularexponent 128
-		specularScale 1.5 1.0 1.1 1.3
+		specularexponent 16
+		specularScale 0.36 0.54 0.66
+		roughness 0.124
 	}
 	{
 		map $lightmap
@@ -870,30 +756,25 @@ textures/eX/eX_floor_tread_01_d
 textures/eX/eX_floorpanel_01_d
 {
 	q3map_material SolidMetal
-	qer_editorimage	textures/eX/eX_floorpanel_01_c
+	qer_editorimage	textures/eX/eX_floorpanel_01_d
 	{
 		stage diffuseMap
 		map textures/eX/eX_floorpanel_01_d
 	}
 	{
-		stage normalMap
-		map textures/eX/eX_floorpanel_01_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
-	}
-	{
 		stage normalParallaxMap
 		map textures/eX/eX_floorpanel_01_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
+		normalscale 1.1 1.1 1.5
+		parallaxDepth 0.05
 		tcMod scale .5 .5
 	}
 	{
 		stage specularMap
 		map textures/eX/eX_floorpanel_01_s
 		specularreflectance 0.52050
-		specularexponent 128
-		specularScale 1.5 1.0 1.1 1.3
+		specularexponent 16
+		specularScale 0.36 0.54 0.66
+		roughness 0.124
 	}
 	{
 		map $lightmap
@@ -904,30 +785,25 @@ textures/eX/eX_floorpanel_01_d
 textures/eX/eX_metalplate_01_d
 {
 	q3map_material SolidMetal
-	qer_editorimage	textures/eX/eX_metalplate_01_c
+	qer_editorimage	textures/eX/eX_metalplate_01_d
 	{
 		stage diffuseMap
 		map textures/eX/eX_metalplate_01_d
 	}
 	{
-		stage normalMap
-		map textures/eX/eX_metalplate_01_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
-	}
-	{
 		stage normalParallaxMap
 		map textures/eX/eX_metalplate_01_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
+		normalscale 1.1 1.1 1.5
+		parallaxDepth 0.05
 		tcMod scale .5 .5
 	}
 	{
 		stage specularMap
 		map textures/eX/eX_metalplate_01_s
 		specularreflectance 0.52050
-		specularexponent 128
-		specularScale 1.5 1.0 1.1 1.3
+		specularexponent 16
+		specularScale 0.36 0.54 0.66
+		roughness 0.124
 	}
 	{
 		map $lightmap
@@ -938,30 +814,25 @@ textures/eX/eX_metalplate_01_d
 textures/eX/eX_metalSupp01_d
 {
 	q3map_material SolidMetal
-	qer_editorimage	textures/eX/eX_metalSupp01_c
+	qer_editorimage	textures/eX/eX_metalSupp01_d
 	{
 		stage diffuseMap
 		map textures/eX/eX_metalSupp01_d
 	}
 	{
-		stage normalMap
-		map textures/eX/eX_metalSupp01_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
-	}
-	{
 		stage normalParallaxMap
 		map textures/eX/eX_metalSupp01_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
+		normalscale 1.1 1.1 1.5
+		parallaxDepth 0.05
 		tcMod scale .5 .5
 	}
 	{
 		stage specularMap
 		map textures/eX/eX_metalSupp01_s
 		specularreflectance 0.52050
-		specularexponent 128
-		specularScale 1.5 1.0 1.1 1.3
+		specularexponent 16
+		specularScale 0.36 0.54 0.66
+		roughness 0.124
 	}
 	{
 		map $lightmap
@@ -972,30 +843,25 @@ textures/eX/eX_metalSupp01_d
 textures/eX/eX_metalwall02_d
 {
 	q3map_material SolidMetal
-	qer_editorimage	textures/eX/eX_metalwall02_c
+	qer_editorimage	textures/eX/eX_metalwall02_d
 	{
 		stage diffuseMap
 		map textures/eX/eX_metalwall02_d
 	}
 	{
-		stage normalMap
-		map textures/eX/eX_metalwall02_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
-	}
-	{
 		stage normalParallaxMap
 		map textures/eX/eX_metalwall02_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
+		normalscale 1.1 1.1 1.5
+		parallaxDepth 0.05
 		tcMod scale .5 .5
 	}
 	{
 		stage specularMap
 		map textures/eX/eX_metalwall02_s
 		specularreflectance 0.52050
-		specularexponent 128
-		specularScale 1.5 1.0 1.1 1.3
+		specularexponent 16
+		specularScale 0.36 0.54 0.66
+		roughness 0.124
 	}
 	{
 		map $lightmap
@@ -1006,30 +872,25 @@ textures/eX/eX_metalwall02_d
 textures/eX/eX_mtl_bigplate_04_d
 {
 	q3map_material SolidMetal
-	qer_editorimage	textures/eX/eX_mtl_bigplate_04_c
+	qer_editorimage	textures/eX/eX_mtl_bigplate_04_d
 	{
 		stage diffuseMap
 		map textures/eX/eX_mtl_bigplate_04_d
 	}
 	{
-		stage normalMap
-		map textures/eX/eX_mtl_bigplate_04_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
-	}
-	{
 		stage normalParallaxMap
 		map textures/eX/eX_mtl_bigplate_04_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
+		normalscale 1.1 1.1 1.5
+		parallaxDepth 0.05
 		tcMod scale .5 .5
 	}
 	{
 		stage specularMap
 		map textures/eX/eX_mtl_bigplate_04_s
 		specularreflectance 0.52050
-		specularexponent 128
-		specularScale 1.5 1.0 1.1 1.3
+		specularexponent 16
+		specularScale 0.36 0.54 0.66
+		roughness 0.124
 	}
 	{
 		map $lightmap
@@ -1040,30 +901,25 @@ textures/eX/eX_mtl_bigplate_04_d
 textures/eX/eX_mtl_bigplate_04b_d
 {
 	q3map_material SolidMetal
-	qer_editorimage	textures/eX/eX_mtl_bigplate_04b_c
+	qer_editorimage	textures/eX/eX_mtl_bigplate_04b_d
 	{
 		stage diffuseMap
 		map textures/eX/eX_mtl_bigplate_04b_d
 	}
 	{
-		stage normalMap
-		map textures/eX/eX_mtl_bigplate_04b_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
-	}
-	{
 		stage normalParallaxMap
 		map textures/eX/eX_mtl_bigplate_04b_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
+		normalscale 1.1 1.1 1.5
+		parallaxDepth 0.05
 		tcMod scale .5 .5
 	}
 	{
 		stage specularMap
 		map textures/eX/eX_mtl_bigplate_04b_s
 		specularreflectance 0.52050
-		specularexponent 128
-		specularScale 1.5 1.0 1.1 1.3
+		specularexponent 16
+		specularScale 0.36 0.54 0.66
+		roughness 0.124
 	}
 	{
 		map $lightmap
@@ -1074,30 +930,25 @@ textures/eX/eX_mtl_bigplate_04b_d
 textures/eX/eX_mtl_panel_02_d
 {
 	q3map_material SolidMetal
-	qer_editorimage	textures/eX/eX_mtl_panel_02_c
+	qer_editorimage	textures/eX/eX_mtl_panel_02_d
 	{
 		stage diffuseMap
 		map textures/eX/eX_mtl_panel_02_d
 	}
 	{
-		stage normalMap
-		map textures/eX/eX_mtl_panel_02_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
-	}
-	{
 		stage normalParallaxMap
 		map textures/eX/eX_mtl_panel_02_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
+		normalscale 1.1 1.1 1.5
+		parallaxDepth 0.05
 		tcMod scale .5 .5
 	}
 	{
 		stage specularMap
 		map textures/eX/eX_mtl_panel_02_s
 		specularreflectance 0.52050
-		specularexponent 128
-		specularScale 1.5 1.0 1.1 1.3
+		specularexponent 16
+		specularScale 0.36 0.54 0.66
+		roughness 0.124		
 	}
 	{
 		map $lightmap
@@ -1108,30 +959,25 @@ textures/eX/eX_mtl_panel_02_d
 textures/eX/eX_mtl_panel_03_d
 {
 	q3map_material SolidMetal
-	qer_editorimage	textures/eX/eX_mtl_panel_03_c
+	qer_editorimage	textures/eX/eX_mtl_panel_03_d
 	{
 		stage diffuseMap
 		map textures/eX/eX_mtl_panel_03_d
 	}
 	{
-		stage normalMap
-		map textures/eX/eX_mtl_panel_03_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
-	}
-	{
 		stage normalParallaxMap
 		map textures/eX/eX_mtl_panel_03_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
+		normalscale 1.1 1.1 1.5
+		parallaxDepth 0.05
 		tcMod scale .5 .5
 	}
 	{
 		stage specularMap
 		map textures/eX/eX_mtl_panel_03_s
 		specularreflectance 0.52050
-		specularexponent 128
-		specularScale 1.5 1.0 1.1 1.3
+		specularexponent 16
+		specularScale 0.36 0.54 0.66
+		roughness 0.124
 	}
 	{
 		map $lightmap
@@ -1142,30 +988,25 @@ textures/eX/eX_mtl_panel_03_d
 textures/eX/eX_mtl_panel_04_d
 {
 	q3map_material SolidMetal
-	qer_editorimage	textures/eX/eX_mtl_panel_04_c
+	qer_editorimage	textures/eX/eX_mtl_panel_04_d
 	{
 		stage diffuseMap
 		map textures/eX/eX_mtl_panel_04_d
 	}
 	{
-		stage normalMap
-		map textures/eX/eX_mtl_panel_04_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
-	}
-	{
 		stage normalParallaxMap
 		map textures/eX/eX_mtl_panel_04_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
+		normalscale 1.1 1.1 1.5
+		parallaxDepth 0.05
 		tcMod scale .5 .5
 	}
 	{
 		stage specularMap
 		map textures/eX/eX_mtl_panel_04_s
 		specularreflectance 0.52050
-		specularexponent 128
-		specularScale 1.5 1.0 1.1 1.3
+		specularexponent 16
+		specularScale 0.36 0.54 0.66
+		roughness 0.124
 	}
 	{
 		map $lightmap
@@ -1176,30 +1017,25 @@ textures/eX/eX_mtl_panel_04_d
 textures/eX/eX_q2_01_d
 {
 	q3map_material SolidMetal
-	qer_editorimage	textures/eX/eX_q2_01_c
+	qer_editorimage	textures/eX/eX_q2_01_d
 	{
 		stage diffuseMap
 		map textures/eX/eX_q2_01_d
 	}
 	{
-		stage normalMap
-		map textures/eX/eX_q2_01_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
-	}
-	{
 		stage normalParallaxMap
 		map textures/eX/eX_q2_01_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
+		normalscale 1.1 1.1 1.5
+		parallaxDepth 0.05
 		tcMod scale .5 .5
 	}
 	{
 		stage specularMap
 		map textures/eX/eX_q2_01_s
 		specularreflectance 0.52050
-		specularexponent 128
-		specularScale 1.5 1.0 1.1 1.3
+		specularexponent 16
+		specularScale 0.36 0.54 0.66
+		roughness 0.124
 	}
 	{
 		map $lightmap
@@ -1210,30 +1046,25 @@ textures/eX/eX_q2_01_d
 textures/eX/eX_q2_01b_d
 {
 	q3map_material SolidMetal
-	qer_editorimage	textures/eX/eX_q2_01b_c
+	qer_editorimage	textures/eX/eX_q2_01b_d
 	{
 		stage diffuseMap
 		map textures/eX/eX_q2_01b_d
 	}
 	{
-		stage normalMap
-		map textures/eX/eX_q2_01b_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
-	}
-	{
 		stage normalParallaxMap
 		map textures/eX/eX_q2_01b_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
+		normalscale 1.1 1.1 1.5
+		parallaxDepth 0.05
 		tcMod scale .5 .5
 	}
 	{
 		stage specularMap
 		map textures/eX/eX_q2_01b_s
 		specularreflectance 0.52050
-		specularexponent 128
-		specularScale 1.5 1.0 1.1 1.3
+		specularexponent 16
+		specularScale 0.36 0.54 0.66
+		roughness 0.124
 	}
 	{
 		map $lightmap
@@ -1244,30 +1075,25 @@ textures/eX/eX_q2_01b_d
 textures/eX/eX_q2_01c_d
 {
 	q3map_material SolidMetal
-	qer_editorimage	textures/eX/eX_q2_01c_c
+	qer_editorimage	textures/eX/eX_q2_01c_d
 	{
 		stage diffuseMap
 		map textures/eX/eX_q2_01c_d
 	}
 	{
-		stage normalMap
-		map textures/eX/eX_q2_01c_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
-	}
-	{
 		stage normalParallaxMap
 		map textures/eX/eX_q2_01c_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
+		normalscale 1.1 1.1 1.5
+		parallaxDepth 0.05
 		tcMod scale .5 .5
 	}
 	{
 		stage specularMap
 		map textures/eX/eX_q2_01c_s
 		specularreflectance 0.52050
-		specularexponent 128
-		specularScale 1.5 1.0 1.1 1.3
+		specularexponent 16
+		specularScale 0.36 0.54 0.66
+		roughness 0.124
 	}
 	{
 		map $lightmap
@@ -1278,30 +1104,26 @@ textures/eX/eX_q2_01c_d
 textures/eX/eX_q2_01d_d
 {
 	q3map_material SolidMetal
-	qer_editorimage	textures/eX/eX_q2_01d_c
+	qer_editorimage	textures/eX/eX_q2_01d_d
+	q3map_material SolidMetal
 	{
 		stage diffuseMap
 		map textures/eX/eX_q2_01d_d
 	}
 	{
-		stage normalMap
-		map textures/eX/eX_q2_01d_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
-	}
-	{
 		stage normalParallaxMap
 		map textures/eX/eX_q2_01d_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
+		normalscale 1.1 1.1 1.5
+		parallaxDepth 0.05
 		tcMod scale .5 .5
 	}
 	{
 		stage specularMap
 		map textures/eX/eX_q2_01d_s
 		specularreflectance 0.52050
-		specularexponent 128
-		specularScale 1.5 1.0 1.1 1.3
+		specularexponent 16
+		specularScale 0.36 0.54 0.66
+		roughness 0.124
 	}
 	{
 		map $lightmap
@@ -1312,30 +1134,25 @@ textures/eX/eX_q2_01d_d
 textures/eX/eX_q2_01e_d
 {
 	q3map_material SolidMetal
-	qer_editorimage	textures/eX/eX_q2_01e_c
+	qer_editorimage	textures/eX/eX_q2_01e_d
 	{
 		stage diffuseMap
 		map textures/eX/eX_q2_01e_d
 	}
 	{
-		stage normalMap
-		map textures/eX/eX_q2_01e_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
-	}
-	{
 		stage normalParallaxMap
 		map textures/eX/eX_q2_01e_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
+		normalscale 1.1 1.1 1.5
+		parallaxDepth 0.05
 		tcMod scale .5 .5
 	}
 	{
 		stage specularMap
 		map textures/eX/eX_q2_01e_s
 		specularreflectance 0.52050
-		specularexponent 128
-		specularScale 1.5 1.0 1.1 1.3
+		specularexponent 16
+		specularScale 0.36 0.54 0.66
+		roughness 0.124
 	}
 	{
 		map $lightmap
@@ -1346,30 +1163,25 @@ textures/eX/eX_q2_01e_d
 textures/eX/eX_rndfloor_01_d
 {
 	q3map_material SolidMetal
-	qer_editorimage	textures/eX/eX_rndfloor_01_c
+	qer_editorimage	textures/eX/eX_rndfloor_01_d
 	{
 		stage diffuseMap
 		map textures/eX/eX_rndfloor_01_d
 	}
 	{
-		stage normalMap
-		map textures/eX/eX_rndfloor_01_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
-	}
-	{
 		stage normalParallaxMap
 		map textures/eX/eX_rndfloor_01_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
+		normalscale 1.1 1.1 1.5
+		parallaxDepth 0.05
 		tcMod scale .5 .5
 	}
 	{
 		stage specularMap
 		map textures/eX/eX_rndfloor_01_s
 		specularreflectance 0.52050
-		specularexponent 128
-		specularScale 1.5 1.0 1.1 1.3
+		specularexponent 16
+		specularScale 0.36 0.54 0.66
+		roughness 0.124
 	}
 	{
 		map $lightmap
@@ -1380,30 +1192,25 @@ textures/eX/eX_rndfloor_01_d
 textures/eX/eX_rndfloor_02_d
 {
 	q3map_material SolidMetal
-	qer_editorimage	textures/eX/eX_rndfloor_02_c
+	qer_editorimage	textures/eX/eX_rndfloor_02_d
 	{
 		stage diffuseMap
 		map textures/eX/eX_rndfloor_02_d
 	}
 	{
-		stage normalMap
-		map textures/eX/eX_rndfloor_02_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
-	}
-	{
 		stage normalParallaxMap
 		map textures/eX/eX_rndfloor_02_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
+		normalscale 1.1 1.1 1.5
+		parallaxDepth 0.05
 		tcMod scale .5 .5
 	}
 	{
 		stage specularMap
 		map textures/eX/eX_rndfloor_02_s
 		specularreflectance 0.52050
-		specularexponent 128
-		specularScale 1.5 1.0 1.1 1.3
+		specularexponent 16
+		specularScale 0.36 0.54 0.66
+		roughness 0.124
 	}
 	{
 		map $lightmap
@@ -1414,30 +1221,25 @@ textures/eX/eX_rndfloor_02_d
 textures/eX/eX_rplates_01_d
 {
 	q3map_material SolidMetal
-	qer_editorimage	textures/eX/eX_rplates_01_c
+	qer_editorimage	textures/eX/eX_rplates_01_d
 	{
 		stage diffuseMap
 		map textures/eX/eX_rplates_01_d
 	}
 	{
-		stage normalMap
-		map textures/eX/eX_rplates_01_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
-	}
-	{
 		stage normalParallaxMap
 		map textures/eX/eX_rplates_01_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
+		normalscale 1.1 1.1 1.5
+		parallaxDepth 0.05
 		tcMod scale .5 .5
 	}
 	{
 		stage specularMap
 		map textures/eX/eX_rplates_01_s
 		specularreflectance 0.52050
-		specularexponent 128
-		specularScale 1.5 1.0 1.1 1.3
+		specularexponent 16
+		specularScale 0.36 0.54 0.66
+		roughness 0.124
 	}
 	{
 		map $lightmap
@@ -1448,30 +1250,25 @@ textures/eX/eX_rplates_01_d
 textures/eX/eX_steptop_01_d
 {
 	q3map_material SolidMetal
-	qer_editorimage	textures/eX/eX_steptop_01_c
+	qer_editorimage	textures/eX/eX_steptop_01_d
 	{
 		stage diffuseMap
 		map textures/eX/eX_steptop_01_d
 	}
 	{
-		stage normalMap
-		map textures/eX/eX_steptop_01_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
-	}
-	{
 		stage normalParallaxMap
 		map textures/eX/eX_steptop_01_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
+		normalscale 1.1 1.1 1.5
+		parallaxDepth 0.05
 		tcMod scale .5 .5
 	}
 	{
 		stage specularMap
 		map textures/eX/eX_steptop_01_s
 		specularreflectance 0.52050
-		specularexponent 128
-		specularScale 1.5 1.0 1.1 1.3
+		specularexponent 16
+		specularScale 0.36 0.54 0.66
+		roughness 0.124
 	}
 	{
 		map $lightmap
@@ -1482,30 +1279,25 @@ textures/eX/eX_steptop_01_d
 textures/eX/eX_trim_01_d
 {
 	q3map_material SolidMetal
-	qer_editorimage	textures/eX/eX_trim_01_c
+	qer_editorimage	textures/eX/eX_trim_01_d
 	{
 		stage diffuseMap
 		map textures/eX/eX_trim_01_d
 	}
 	{
-		stage normalMap
-		map textures/eX/eX_trim_01_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
-	}
-	{
 		stage normalParallaxMap
 		map textures/eX/eX_trim_01_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
+		normalscale 1.1 1.1 1.5
+		parallaxDepth 0.05
 		tcMod scale .5 .5
 	}
 	{
 		stage specularMap
 		map textures/eX/eX_trim_01_s
 		specularreflectance 0.52050
-		specularexponent 128
-		specularScale 1.5 1.0 1.1 1.3
+		specularexponent 16
+		specularScale 0.36 0.54 0.66
+		roughness 0.124
 	}
 	{
 		map $lightmap
@@ -1516,30 +1308,25 @@ textures/eX/eX_trim_01_d
 textures/eX/eX_trim_baseboard_02_d
 {
 	q3map_material SolidMetal
-	qer_editorimage	textures/eX/eX_trim_baseboard_02_c
+	qer_editorimage	textures/eX/eX_trim_baseboard_02_d
 	{
 		stage diffuseMap
 		map textures/eX/eX_trim_baseboard_02_d
 	}
 	{
-		stage normalMap
-		map textures/eX/eX_trim_baseboard_02_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
-	}
-	{
 		stage normalParallaxMap
 		map textures/eX/eX_trim_baseboard_02_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
+		normalscale 1.1 1.1 1.5
+		parallaxDepth 0.05
 		tcMod scale .5 .5
 	}
 	{
 		stage specularMap
 		map textures/eX/eX_trim_baseboard_02_s
 		specularreflectance 0.52050
-		specularexponent 128
-		specularScale 1.5 1.0 1.1 1.3
+		specularexponent 16
+		specularScale 0.36 0.54 0.66
+		roughness 0.124
 	}
 	{
 		map $lightmap
@@ -1550,30 +1337,25 @@ textures/eX/eX_trim_baseboard_02_d
 textures/eX/eX_trim_baseboard_03_d
 {
 	q3map_material SolidMetal
-	qer_editorimage	textures/eX/eX_trim_baseboard_03_c
+	qer_editorimage	textures/eX/eX_trim_baseboard_03_d
 	{
 		stage diffuseMap
 		map textures/eX/eX_trim_baseboard_03_d
 	}
 	{
-		stage normalMap
-		map textures/eX/eX_trim_baseboard_03_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
-	}
-	{
 		stage normalParallaxMap
 		map textures/eX/eX_trim_baseboard_03_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
+		normalscale 1.1 1.1 1.5
+		parallaxDepth 0.05
 		tcMod scale .5 .5
 	}
 	{
 		stage specularMap
 		map textures/eX/eX_trim_baseboard_03_s
 		specularreflectance 0.52050
-		specularexponent 128
-		specularScale 1.5 1.0 1.1 1.3
+		specularexponent 16
+		specularScale 0.36 0.54 0.66
+		roughness 0.124
 	}
 	{
 		map $lightmap
@@ -1584,30 +1366,25 @@ textures/eX/eX_trim_baseboard_03_d
 textures/eX/eX_trim_baseboard_d
 {
 	q3map_material SolidMetal
-	qer_editorimage	textures/eX/eX_trim_baseboard_c
+	qer_editorimage	textures/eX/eX_trim_baseboard_d
 	{
 		stage diffuseMap
 		map textures/eX/eX_trim_baseboard_d
 	}
 	{
-		stage normalMap
-		map textures/eX/eX_trim_baseboard_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
-	}
-	{
 		stage normalParallaxMap
 		map textures/eX/eX_trim_baseboard_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
+		normalscale 1.1 1.1 1.5
+		parallaxDepth 0.05
 		tcMod scale .5 .5
 	}
 	{
 		stage specularMap
 		map textures/eX/eX_trim_baseboard_s
 		specularreflectance 0.52050
-		specularexponent 128
-		specularScale 1.5 1.0 1.1 1.3
+		specularexponent 16
+		specularScale 0.36 0.54 0.66
+		roughness 0.124
 	}
 	{
 		map $lightmap
@@ -1618,30 +1395,25 @@ textures/eX/eX_trim_baseboard_d
 textures/eX/eX_trim_psimple_04_d
 {
 	q3map_material SolidMetal
-	qer_editorimage	textures/eX/eX_trim_psimple_04_c
+	qer_editorimage	textures/eX/eX_trim_psimple_04_d
 	{
 		stage diffuseMap
 		map textures/eX/eX_trim_psimple_04_d
 	}
 	{
-		stage normalMap
-		map textures/eX/eX_trim_psimple_04_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
-	}
-	{
 		stage normalParallaxMap
 		map textures/eX/eX_trim_psimple_04_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
+		normalscale 1.1 1.1 1.5
+		parallaxDepth 0.05
 		tcMod scale .5 .5
 	}
 	{
 		stage specularMap
 		map textures/eX/eX_trim_psimple_04_s
 		specularreflectance 0.52050
-		specularexponent 128
-		specularScale 1.5 1.0 1.1 1.3
+		specularexponent 16
+		specularScale 0.36 0.54 0.66
+		roughness 0.124
 	}
 	{
 		map $lightmap
@@ -1652,30 +1424,25 @@ textures/eX/eX_trim_psimple_04_d
 textures/eX/eX_trim_psimple_05_d
 {
 	q3map_material SolidMetal
-	qer_editorimage	textures/eX/eX_trim_psimple_05_c
+	qer_editorimage	textures/eX/eX_trim_psimple_05_d
 	{
 		stage diffuseMap
 		map textures/eX/eX_trim_psimple_05_d
 	}
 	{
-		stage normalMap
-		map textures/eX/eX_trim_psimple_05_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
-	}
-	{
 		stage normalParallaxMap
 		map textures/eX/eX_trim_psimple_05_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
+		normalscale 1.1 1.1 1.5
+		parallaxDepth 0.05
 		tcMod scale .5 .5
 	}
 	{
 		stage specularMap
 		map textures/eX/eX_trim_psimple_05_s
 		specularreflectance 0.52050
-		specularexponent 128
-		specularScale 1.5 1.0 1.1 1.3
+		specularexponent 16
+		specularScale 0.36 0.54 0.66
+		roughness 0.124
 	}
 	{
 		map $lightmap
@@ -1686,30 +1453,25 @@ textures/eX/eX_trim_psimple_05_d
 textures/eX/eX_trim_simple03_d
 {
 	q3map_material SolidMetal
-	qer_editorimage	textures/eX/eX_trim_simple03_c
+	qer_editorimage	textures/eX/eX_trim_simple03_d
 	{
 		stage diffuseMap
 		map textures/eX/eX_trim_simple03_d
 	}
 	{
-		stage normalMap
-		map textures/eX/eX_trim_simple03_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
-	}
-	{
 		stage normalParallaxMap
 		map textures/eX/eX_trim_simple03_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
+		normalscale 1.1 1.1 1.5
+		parallaxDepth 0.05
 		tcMod scale .5 .5
 	}
 	{
 		stage specularMap
 		map textures/eX/eX_trim_simple03_s
 		specularreflectance 0.52050
-		specularexponent 128
-		specularScale 1.5 1.0 1.1 1.3
+		specularexponent 16
+		specularScale 0.36 0.54 0.66
+		roughness 0.124
 	}
 	{
 		map $lightmap
@@ -1720,30 +1482,25 @@ textures/eX/eX_trim_simple03_d
 textures/eX/eX_trim_simple_01_d
 {
 	q3map_material SolidMetal
-	qer_editorimage	textures/eX/eX_trim_simple_01_c
+	qer_editorimage	textures/eX/eX_trim_simple_01_d
 	{
 		stage diffuseMap
 		map textures/eX/eX_trim_simple_01_d
 	}
 	{
-		stage normalMap
-		map textures/eX/eX_trim_simple_01_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
-	}
-	{
 		stage normalParallaxMap
 		map textures/eX/eX_trim_simple_01_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
+		normalscale 1.1 1.1 1.5
+		parallaxDepth 0.05
 		tcMod scale .5 .5
 	}
 	{
 		stage specularMap
 		map textures/eX/eX_trim_simple_01_s
 		specularreflectance 0.52050
-		specularexponent 128
-		specularScale 1.5 1.0 1.1 1.3
+		specularexponent 16
+		specularScale 0.36 0.54 0.66
+		roughness 0.124
 	}
 	{
 		map $lightmap
@@ -1754,30 +1511,25 @@ textures/eX/eX_trim_simple_01_d
 textures/eX/eX_trim_support_03_d
 {
 	q3map_material SolidMetal
-	qer_editorimage	textures/eX/eX_trim_support_03_c
+	qer_editorimage	textures/eX/eX_trim_support_03_d
 	{
 		stage diffuseMap
 		map textures/eX/eX_trim_support_03_d
 	}
 	{
-		stage normalMap
-		map textures/eX/eX_trim_support_03_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
-	}
-	{
 		stage normalParallaxMap
 		map textures/eX/eX_trim_support_03_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
+		normalscale 1.1 1.1 1.5
+		parallaxDepth 0.05
 		tcMod scale .5 .5
 	}
 	{
 		stage specularMap
 		map textures/eX/eX_trim_support_03_s
 		specularreflectance 0.52050
-		specularexponent 128
-		specularScale 1.5 1.0 1.1 1.3
+		specularexponent 16
+		specularScale 0.36 0.54 0.66
+		roughness 0.124
 	}
 	{
 		map $lightmap
@@ -1788,30 +1540,25 @@ textures/eX/eX_trim_support_03_d
 textures/eX/eX_trim_vert_01_d
 {
 	q3map_material SolidMetal
-	qer_editorimage	textures/eX/eX_trim_vert_01_c
+	qer_editorimage	textures/eX/eX_trim_vert_01_d
 	{
 		stage diffuseMap
 		map textures/eX/eX_trim_vert_01_d
 	}
 	{
-		stage normalMap
-		map textures/eX/eX_trim_vert_01_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
-	}
-	{
 		stage normalParallaxMap
 		map textures/eX/eX_trim_vert_01_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
+		normalscale 1.1 1.1 1.5
+		parallaxDepth 0.05
 		tcMod scale .5 .5
 	}
 	{
 		stage specularMap
 		map textures/eX/eX_trim_vert_01_s
 		specularreflectance 0.52050
-		specularexponent 128
-		specularScale 1.5 1.0 1.1 1.3
+		specularexponent 16
+		specularScale 0.36 0.54 0.66
+		roughness 0.124
 	}
 	{
 		map $lightmap
@@ -1822,31 +1569,25 @@ textures/eX/eX_trim_vert_01_d
 textures/eX/eX_wall_01_d
 {
 	q3map_material SolidMetal
-	qer_editorimage	textures/eX/eX_wall_01_c
+	qer_editorimage	textures/eX/eX_wall_01_d
 	{
 		stage diffuseMap
 		map textures/eX/eX_wall_01_d
 	}
 	{
-		stage normalMap
-		map textures/eX/eX_wall_01_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
-		tcMod scale .5 .5
-	}
-	{
 		stage normalParallaxMap
 		map textures/eX/eX_wall_01_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
+		normalscale 1.1 1.1 1.5
+		parallaxDepth 0.05
 		tcMod scale .5 .5
 	}
 	{
 		stage specularMap
 		map textures/eX/eX_wall_01_s
 		specularreflectance 0.52050
-		specularexponent 128
-		specularScale 1.5 1.0 1.1 1.3
+		specularexponent 16
+		specularScale 0.36 0.54 0.66
+		roughness 0.124
 	}
 	{
 		map $lightmap
@@ -1857,30 +1598,25 @@ textures/eX/eX_wall_01_d
 textures/eX/eX_wall_01b_d
 {
 	q3map_material SolidMetal
-	qer_editorimage	textures/eX/eX_wall_01b_c
+	qer_editorimage	textures/eX/eX_wall_01b_d
 	{
 		stage diffuseMap
 		map textures/eX/eX_wall_01b_d
 	}
 	{
-		stage normalMap
-		map textures/eX/eX_wall_01_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
-	}
-	{
 		stage normalParallaxMap
 		map textures/eX/eX_wall_01_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
+		normalscale 1.1 1.1 1.5
+		parallaxDepth 0.05
 		tcMod scale .5 .5
 	}
 	{
 		stage specularMap
 		map textures/eX/eX_wall_01_s
 		specularreflectance 0.52050
-		specularexponent 128
-		specularScale 1.5 1.0 1.1 1.3
+		specularexponent 16
+		specularScale 0.36 0.54 0.66
+		roughness 0.124
 	}
 	{
 		map $lightmap
@@ -1891,30 +1627,25 @@ textures/eX/eX_wall_01b_d
 textures/eX/eX_wall_b01_d
 {
 	q3map_material SolidMetal
-	qer_editorimage	textures/eX/eX_wall_b01_c
+	qer_editorimage	textures/eX/eX_wall_b01_d
 	{
 		stage diffuseMap
 		map textures/eX/eX_wall_b01_d
 	}
 	{
-		stage normalMap
-		map textures/eX/eX_wall_b01_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
-	}
-	{
 		stage normalParallaxMap
 		map textures/eX/eX_wall_b01_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
+		normalscale 1.1 1.1 1.5
+		parallaxDepth 0.05
 		tcMod scale .5 .5
 	}
 	{
 		stage specularMap
 		map textures/eX/eX_wall_b01_s
 		specularreflectance 0.52050
-		specularexponent 128
-		specularScale 1.5 1.0 1.1 1.3
+		specularexponent 16
+		specularScale 0.36 0.54 0.66
+		roughness 0.124
 	}
 	{
 		map $lightmap
@@ -1925,30 +1656,25 @@ textures/eX/eX_wall_b01_d
 textures/eX/eX_wall_bigrib_02_d
 {
 	q3map_material SolidMetal
-	qer_editorimage	textures/eX/eX_wall_bigrib_02_c
+	qer_editorimage	textures/eX/eX_wall_bigrib_02_d
 	{
 		stage diffuseMap
 		map textures/eX/eX_wall_bigrib_02_d
 	}
 	{
-		stage normalMap
-		map textures/eX/eX_wall_bigrib_02_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
-	}
-	{
 		stage normalParallaxMap
 		map textures/eX/eX_wall_bigrib_02_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
+		normalscale 1.1 1.1 1.5
+		parallaxDepth 0.05
 		tcMod scale .5 .5
 	}
 	{
 		stage specularMap
 		map textures/eX/eX_wall_bigrib_02_s
 		specularreflectance 0.52050
-		specularexponent 128
-		specularScale 1.5 1.0 1.1 1.3
+		specularexponent 16
+		specularScale 0.36 0.54 0.66
+		roughness 0.124
 	}
 	{
 		map $lightmap
@@ -1959,29 +1685,26 @@ textures/eX/eX_wall_bigrib_02_d
 textures/eX/eX_wall_bplate_06_d
 {
 	q3map_material SolidMetal
-	qer_editorimage	textures/eX/eX_wall_bplate_06_c
+	qer_editorimage	textures/eX/eX_wall_bplate_06_d
+	q3map_material SolidMetal
 	{
 		stage diffuseMap
 		map textures/eX/eX_wall_bplate_06_d
 	}
 	{
-		stage normalMap
-		map textures/eX/eX_wall_bplate_06_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
-	}
-	{
 		stage normalParallaxMap
 		map textures/eX/eX_wall_bplate_06_n
-		parallaxDepth 128
+		normalscale 1.1 1.1 1.5
+		parallaxDepth 0.05
 		tcMod scale .5 .5
 	}
 	{
 		stage specularMap
 		map textures/eX/eX_wall_bplate_06_s
 		specularreflectance 0.52050
-		specularexponent 128
-		specularScale 1.5 1.0 1.1 1.3
+		specularexponent 16
+		specularScale 0.36 0.54 0.66
+		roughness 0.124
 	}
 	{
 		map $lightmap
@@ -1992,30 +1715,25 @@ textures/eX/eX_wall_bplate_06_d
 textures/eX/eX_wall_panel_05_d
 {
 	q3map_material SolidMetal
-	qer_editorimage	textures/eX/eX_wall_panel_05_c
+	qer_editorimage	textures/eX/eX_wall_panel_05_d
 	{
 		stage diffuseMap
 		map textures/eX/eX_wall_panel_05_d
 	}
 	{
-		stage normalMap
-		map textures/eX/eX_wall_panel_05_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
-	}
-	{
 		stage normalParallaxMap
 		map textures/eX/eX_wall_panel_05_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
+		normalscale 1.1 1.1 1.5
+		parallaxDepth 0.05
 		tcMod scale .5 .5
 	}
 	{
 		stage specularMap
 		map textures/eX/eX_wall_panel_05_s
 		specularreflectance 0.52050
-		specularexponent 128
-		specularScale 1.5 1.0 1.1 1.3
+		specularexponent 16
+		specularScale 0.36 0.54 0.66
+		roughness 0.124
 	}
 	{
 		map $lightmap
@@ -2026,30 +1744,25 @@ textures/eX/eX_wall_panel_05_d
 textures/eX/eX_wall_panels_08_d
 {
 	q3map_material SolidMetal
-	qer_editorimage	textures/eX/eX_wall_panels_08_c
+	qer_editorimage	textures/eX/eX_wall_panels_08_d
 	{
 		stage diffuseMap
 		map textures/eX/eX_wall_panels_08_d
 	}
 	{
-		stage normalMap
-		map textures/eX/eX_wall_panels_08_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
-	}
-	{
 		stage normalParallaxMap
 		map textures/eX/eX_wall_panels_08_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
+		normalscale 1.1 1.1 1.5
+		parallaxDepth 0.05
 		tcMod scale .5 .5
 	}	
 	{
 		stage specularMap
 		map textures/eX/eX_wall_panels_08_s
 		specularreflectance 0.52050
-		specularexponent 128
-		specularScale 1.5 1.0 1.1 1.3
+		specularexponent 16
+		specularScale 0.36 0.54 0.66
+		roughness 0.124
 	}
 	{
 		map $lightmap
@@ -2060,30 +1773,25 @@ textures/eX/eX_wall_panels_08_d
 textures/eX/eX_wall_panels_08b_d
 {
 	q3map_material SolidMetal
-	qer_editorimage	textures/eX/eX_wall_panels_08b_c
+	qer_editorimage	textures/eX/eX_wall_panels_08b_d
 	{
 		stage diffuseMap
 		map textures/eX/eX_wall_panels_08b_d
 	}
 	{
-		stage normalMap
-		map textures/eX/eX_wall_panels_08b_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
-	}
-	{
 		stage normalParallaxMap
 		map textures/eX/eX_wall_panels_08b_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
+		normalscale 1.1 1.1 1.5
+		parallaxDepth 0.05
 		tcMod scale .5 .5
 	}
 	{
 		stage specularMap
 		map textures/eX/eX_wall_panels_08b_s
 		specularreflectance 0.52050
-		specularexponent 128
-		specularScale 1.5 1.0 1.1 1.3
+		specularexponent 16
+		specularScale 0.36 0.54 0.66
+		roughness 0.124
 	}
 	{
 		map $lightmap
@@ -2094,30 +1802,25 @@ textures/eX/eX_wall_panels_08b_d
 textures/eX/eX_wall_pipe_d
 {
 	q3map_material SolidMetal
-	qer_editorimage	textures/eX/eX_wall_pipe_c
+	qer_editorimage	textures/eX/eX_wall_pipe_d
 	{
 		stage diffuseMap
 		map textures/eX/eX_wall_pipe_d
 	}
 	{
-		stage normalMap
-		map textures/eX/eX_wall_pipe_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
-	}
-	{
 		stage normalParallaxMap
 		map textures/eX/eX_wall_pipe_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
+		normalscale 1.1 1.1 1.5
+		parallaxDepth 0.05
 		tcMod scale .5 .5
 	}
 	{
 		stage specularMap
 		map textures/eX/eX_wall_pipe_s
 		specularreflectance 0.52050
-		specularexponent 128
-		specularScale 1.5 1.0 1.1 1.3
+		specularexponent 16
+		specularScale 0.36 0.54 0.66
+		roughness 0.124
 	}
 	{
 		map $lightmap
@@ -2128,30 +1831,25 @@ textures/eX/eX_wall_pipe_d
 textures/eX/eX_wall_u207_d
 {
 	q3map_material SolidMetal
-	qer_editorimage	textures/eX/eX_wall_u207_c
+	qer_editorimage	textures/eX/eX_wall_u207_d
 	{
 		stage diffuseMap
 		map textures/eX/eX_wall_u207_d
 	}
 	{
-		stage normalMap
-		map textures/eX/eX_wall_u207_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
-	}
-	{
 		stage normalParallaxMap
 		map textures/eX/eX_wall_u207_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
+		normalscale 1.1 1.1 1.5
+		parallaxDepth 0.05
 		tcMod scale .5 .5
 	}
 	{
 		stage specularMap
 		map textures/eX/eX_wall_u207_s
 		specularreflectance 0.52050
-		specularexponent 128
-		specularScale 1.5 1.0 1.1 1.3
+		specularexponent 16
+		specularScale 0.36 0.54 0.66
+		roughness 0.124
 	}
 	{
 		map $lightmap
@@ -2162,30 +1860,25 @@ textures/eX/eX_wall_u207_d
 textures/eX/eXmetal_plate01_d
 {
 	q3map_material SolidMetal
-	qer_editorimage	textures/eX/eXmetal_plate01_c
+	qer_editorimage	textures/eX/eXmetal_plate01_d
 	{
 		stage diffuseMap
 		map textures/eX/eXmetal_plate01_d
 	}
 	{
-		stage normalMap
-		map textures/eX/eXmetal_plate01_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
-	}
-	{
 		stage normalParallaxMap
 		map textures/eX/eXmetal_plate01_nal
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
+		normalscale 1.1 1.1 1.5
+		parallaxDepth 0.05
 		tcMod scale .5 .5
 	}
 	{
 		stage specularMap
 		map textures/eX/eXmetal_plate01_s
 		specularreflectance 0.52050
-		specularexponent 128
-		specularScale 1.5 1.0 1.1 1.3
+		specularexponent 16
+		specularScale 0.36 0.54 0.66
+		roughness 0.124
 	}
 	{
 		map $lightmap
@@ -2196,30 +1889,25 @@ textures/eX/eXmetal_plate01_d
 textures/eX/eXmetal_plate01B_d
 {
 	q3map_material SolidMetal
-	qer_editorimage	textures/eX/eXmetal_plate01B_c
+	qer_editorimage	textures/eX/eXmetal_plate01B_d
 	{
 		stage diffuseMap
 		map textures/eX/eXmetal_plate01B_d
 	}
 	{
-		stage normalMap
-		map textures/eX/eX_cretebase_01_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
-	}
-	{
 		stage normalParallaxMap
 		map textures/eX/eXmetal_plate01_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
+		normalscale 1.1 1.1 1.5
+		parallaxDepth 0.05
 		tcMod scale .5 .5
 	}
 	{
 		stage specularMap
 		map textures/eX/eXmetal_plate01B_s
 		specularreflectance 0.52050
-		specularexponent 128
-		specularScale 1.5 1.0 1.1 1.3
+		specularexponent 16
+		specularScale 0.36 0.54 0.66
+		roughness 0.124
 	}
 	{
 		map $lightmap
@@ -2230,30 +1918,25 @@ textures/eX/eXmetal_plate01B_d
 textures/eX/eXmetal_plate01c_d
 {
 	q3map_material SolidMetal
-	qer_editorimage	textures/eX/eXmetal_plate01c_c
+	qer_editorimage	textures/eX/eXmetal_plate01c_d
 	{
 		stage diffuseMap
 		map textures/eX/eXmetal_plate01c_d
 	}
 	{
-		stage normalMap
-		map textures/eX/eXmetal_plate01c_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
-	}
-	{
 		stage normalParallaxMap
 		map textures/eX/eXmetal_plate01c_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
+		normalscale 1.1 1.1 1.5
+		parallaxDepth 0.05
 		tcMod scale .5 .5
 	}
 	{
 		stage specularMap
 		map textures/eX/eXmetal_plate01c_s
 		specularreflectance 0.52050
-		specularexponent 128
-		specularScale 1.5 1.0 1.1 1.3
+		specularexponent 16
+		specularScale 0.36 0.54 0.66
+		roughness 0.124
 	}
 	{
 		map $lightmap
@@ -2264,30 +1947,26 @@ textures/eX/eXmetal_plate01c_d
 textures/eX/eXmetalBase01_d
 {
 	q3map_material SolidMetal
-	qer_editorimage	textures/eX/eXmetalBase01_c
+	qer_editorimage	textures/eX/eXmetalBase01_d
+	q3map_material SolidMetal
 	{
 		stage diffuseMap
 		map textures/eX/eXmetalBase01_d
 	}
 	{
-		stage normalMap
-		map textures/eX/eXmetalBase01_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
-	}
-	{
 		stage normalParallaxMap
 		map textures/eX/eXmetalBase01_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
+		normalscale 1.1 1.1 1.5
+		parallaxDepth 0.05
 		tcMod scale .5 .5
 	}
 	{
 		stage specularMap
 		map textures/eX/eXmetalBase01_s
 		specularreflectance 0.52050
-		specularexponent 128
-		specularScale 1.5 1.0 1.1 1.3
+		specularexponent 16
+		specularScale 0.36 0.54 0.66
+		roughness 0.124
 	}
 	{
 		map $lightmap
@@ -2298,30 +1977,25 @@ textures/eX/eXmetalBase01_d
 textures/eX/eXmetalBase02_d
 {
 	q3map_material SolidMetal
-	qer_editorimage	textures/eX/eXmetalBase02_c
+	qer_editorimage	textures/eX/eXmetalBase02_d
 	{
 		stage diffuseMap
 		map textures/eX/eXmetalBase02_d
 	}
 	{
-		stage normalMap
-		map textures/eX/eXmetalBase02_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
-	}
-	{
 		stage normalParallaxMap
 		map textures/eX/eXmetalBase02_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
+		normalscale 1.1 1.1 1.5
+		parallaxDepth 0.05
 		tcMod scale .5 .5
 	}
 	{
 		stage specularMap
 		map textures/eX/eXmetalBase02_s
 		specularreflectance 0.52050
-		specularexponent 128
-		specularScale 1.5 1.0 1.1 1.3
+		specularexponent 16
+		specularScale 0.36 0.54 0.66
+		roughness 0.124
 	}
 	{
 		map $lightmap
@@ -2332,30 +2006,25 @@ textures/eX/eXmetalBase02_d
 textures/eX/eXmetalBase03_d
 {
 	q3map_material SolidMetal
-	qer_editorimage	textures/eX/eXmetalBase03_c
+	qer_editorimage	textures/eX/eXmetalBase03_d
 	{
 		stage diffuseMap
 		map textures/eX/eXmetalBase03_d
 	}
 	{
-		stage normalMap
-		map textures/eX/eXmetalBase03_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
-	}
-	{
 		stage normalParallaxMap
 		map textures/eX/eXmetalBase03_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
+		normalscale 1.1 1.1 1.5
+		parallaxDepth 0.05
 		tcMod scale .5 .5
 	}
 	{
 		stage specularMap
 		map textures/eX/eXmetalBase03_s
 		specularreflectance 0.52050
-		specularexponent 128
-		specularScale 1.5 1.0 1.1 1.3
+		specularexponent 16
+		specularScale 0.36 0.54 0.66
+		roughness 0.124
 	}
 	{
 		map $lightmap
@@ -2366,7 +2035,7 @@ textures/eX/eXmetalBase03_d
 textures/eX/eXmetalBase04
 {
 	q3map_material SolidMetal
-	qer_editorimage	textures/eX/eXmetalBase04_c
+	qer_editorimage	textures/eX/eXmetalBase04_d
 	{
 		stage diffuseMap
 		map textures/eX/eXmetalBase04_d
@@ -2374,22 +2043,17 @@ textures/eX/eXmetalBase04
 	{
 		stage normalParallaxMap
 		map textures/eX/eXmetalBase04_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
-	}
-	{
-		stage normalMap
-		map textures/eX/eXmetalBase04_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
+		normalscale 1.1 1.1 1.5
+		parallaxDepth 0.05
 		tcMod scale .5 .5
 	}
 	{
 		stage specularMap
 		map textures/eX/eXmetalBase04_s
 		specularreflectance 0.52050
-		specularexponent 128
-		specularScale 1.5 1.0 1.1 1.3
+		specularexponent 16
+		specularScale 0.36 0.54 0.66
+		roughness 0.124
 	}
 	{
 		map $lightmap
@@ -2400,30 +2064,25 @@ textures/eX/eXmetalBase04
 textures/eX/eXmetalBase05Rust_d
 {
 	q3map_material SolidMetal
-	qer_editorimage	textures/eX/eXmetalBase05Rust_c
+	qer_editorimage	textures/eX/eXmetalBase05Rust_d
 	{
 		stage diffuseMap
 		map textures/eX/eXmetalBase05Rust_d
 	}
 	{
-		stage normalMap
-		map textures/eX/eXmetalBase05Rust_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
-	}
-	{
 		stage normalParallaxMap
 		map textures/eX/eXmetalBase05Rust_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
+		normalscale 1.1 1.1 1.5
+		parallaxDepth 0.05
 		tcMod scale .5 .5
 	}
 	{
 		stage specularMap
 		map textures/eX/eXmetalBase05Rust_s
 		specularreflectance 0.52050
-		specularexponent 128
-		specularScale 1.5 1.0 1.1 1.3
+		specularexponent 16
+		specularScale 0.36 0.54 0.66
+		roughness 0.124
 	}
 	{
 		map $lightmap
@@ -2434,30 +2093,25 @@ textures/eX/eXmetalBase05Rust_d
 textures/eX/eXmetalBase06rust_d
 {
 	q3map_material SolidMetal
-	qer_editorimage	textures/eX/eXmetalBase06rust_c
+	qer_editorimage	textures/eX/eXmetalBase06rust_d
 	{
 		stage diffuseMap
 		map textures/eX/eXmetalBase06rust_d
 	}
 	{
-		stage normalMap
-		map textures/eX/eXmetalBase05Rust_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
-	}
-	{
 		stage normalParallaxMap
 		map textures/eX/eXmetalBase05Rust_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
+		normalscale 1.1 1.1 1.5
+		parallaxDepth 0.05
 		tcMod scale .5 .5
-	}	
+	}
 	{
 		stage specularMap
 		map textures/eX/eXmetalBase05Rust_s
 		specularreflectance 0.52050
-		specularexponent 128
-		specularScale 1.5 1.0 1.1 1.3
+		specularexponent 16
+		specularScale 0.36 0.54 0.66
+		roughness 0.124
 	}
 	{
 		map $lightmap
@@ -2468,30 +2122,25 @@ textures/eX/eXmetalBase06rust_d
 textures/eX/eXmetalBase07Rust
 {
 	q3map_material SolidMetal
-	qer_editorimage	textures/eX/eXmetalBase07Rust_c
+	qer_editorimage	textures/eX/eXmetalBase07Rust_d
 	{
 		stage diffuseMap
 		map textures/eX/eXmetalBase07Rust_d
 	}
 	{
-		stage normalMap
-		map textures/eX/eXmetalBase05Rust_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
-	}
-	{
 		stage normalParallaxMap
 		map textures/eX/eXmetalBase05Rust_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
+		normalscale 1.1 1.1 1.5
+		parallaxDepth 0.05
 		tcMod scale .5 .5
-	}	
+	}
 	{
 		stage specularMap
 		map textures/eX/eXmetalBase05Rust_s
 		specularreflectance 0.52050
-		specularexponent 128
-		specularScale 1.5 1.0 1.1 1.3
+		specularexponent 16
+		specularScale 0.36 0.54 0.66
+		roughness 0.124
 	}
 	{
 		map $lightmap
@@ -2502,30 +2151,25 @@ textures/eX/eXmetalBase07Rust
 textures/eX/eXmetalFloor02_d
 {
 	q3map_material SolidMetal
-	qer_editorimage	textures/eX/eXmetalFloor02_c
+	qer_editorimage	textures/eX/eXmetalFloor02_d
 	{
 		stage diffuseMap
 		map textures/eX/eXmetalFloor02_d
 	}
 	{
-		stage normalMap
-		map textures/eX/eXmetalFloor02_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
-	}
-	{
 		stage normalParallaxMap
 		map textures/eX/eXmetalFloor02_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
+		normalscale 1.1 1.1 1.5
+		parallaxDepth 0.05
 		tcMod scale .5 .5
 	}
 	{
 		stage specularMap
 		map textures/eX/eXmetalFloor02_s
 		specularreflectance 0.52050
-		specularexponent 128
-		specularScale 1.5 1.0 1.1 1.3
+		specularexponent 16
+		specularScale 0.36 0.54 0.66
+		roughness 0.124
 	}
 	{
 		map $lightmap
@@ -2536,30 +2180,25 @@ textures/eX/eXmetalFloor02_d
 textures/eX/eXmetalrib01_d
 {
 	q3map_material SolidMetal
-	qer_editorimage	textures/eX/eXmetalrib01_c
+	qer_editorimage	textures/eX/eXmetalrib01_d
 	{
 		stage diffuseMap
 		map textures/eX/eXmetalrib01_d
 	}
 	{
-		stage normalMap
-		map textures/eX/eXmetalrib01_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
-	}
-	{
 		stage normalParallaxMap
 		map textures/eX/eXmetalrib01_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
+		normalscale 1.1 1.1 1.5
+		parallaxDepth 0.05
 		tcMod scale .5 .5
 	}
 	{
 		stage specularMap
 		map textures/eX/eXmetalrib01_s
 		specularreflectance 0.52050
-		specularexponent 128
-		specularScale 1.5 1.0 1.1 1.3
+		specularexponent 16
+		specularScale 0.36 0.54 0.66
+		roughness 0.124
 	}
 	{
 		map $lightmap
@@ -2570,30 +2209,26 @@ textures/eX/eXmetalrib01_d
 textures/eX/eX_lightpanel_01_d
 {
 	q3map_material SolidMetal
-	qer_editorimage	textures/eX/eX_lightpanel_01_c
+	surfaceparm alphashadow
+	qer_editorimage	textures/eX/eX_lightpanel_01_d
 	{
 		stage diffuseMap
 		map textures/eX/eX_lightpanel_01_d
 	}
 	{
-		stage normalMap
-		map textures/eX/eX_lightpanel_01_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
-	}
-	{
 		stage normalParallaxMap
 		map textures/eX/eX_lightpanel_01_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
+		normalscale 1.1 1.1 1.5
+		parallaxDepth 0.05
 		tcMod scale .5 .5
 	}
 	{
 		stage specularMap
 		map textures/eX/eX_lightpanel_01_s
 		specularreflectance 0.52050
-		specularexponent 128
-		specularScale 1.5 1.0 1.1 1.3
+		specularexponent 16
+		specularScale 0.36 0.54 0.66
+		roughness 0.124
 	}
 	{
 		map $lightmap
@@ -2604,40 +2239,36 @@ textures/eX/eX_lightpanel_01_d
 textures/eX/eX_lightpanel_01_lit
 {
 	q3map_material SolidMetal
-	qer_editorimage	textures/eX/eX_lightpanel_01_c
+	surfaceparm alphashadow
+	qer_editorimage	textures/eX/eX_lightpanel_01_d
 	{
 		stage diffuseMap
 		map textures/eX/eX_lightpanel_01_d
 	}
 	{
-		stage normalMap
-		map textures/eX/eX_lightpanel_01_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
-	}
-	{
 		stage normalParallaxMap
 		map textures/eX/eX_lightpanel_01_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
+		normalscale 1.1 1.1 1.5
+		parallaxDepth 0.05
 		tcMod scale .5 .5
 	}
 	{
 		stage specularMap
 		map textures/eX/eX_lightpanel_01_s
 		specularreflectance 0.52050
-		specularexponent 128
-		specularScale 1.5 1.0 1.1 1.3
+		specularexponent 16
+		specularScale 0.36 0.54 0.66
+		roughness 0.124
 	}
 	{
 		map $lightmap
 		blendFunc GL_DST_COLOR GL_ZERO
 	}
 	{
-		map textures/eX/eX_lightpanel_01_c
+		map textures/eX/eX_lightpanel_01_d
 		blendfunc add
-        alphaFunc GE128
-        depthWrite
+		alphaFunc GE128
+		depthWrite
 		rgbGen lightingDiffuse
 	}
 }
@@ -2645,40 +2276,36 @@ textures/eX/eX_lightpanel_01_lit
 textures/eX/eX_lightpanel_01_lit_1000
 {
 	q3map_material SolidMetal
-	qer_editorimage	textures/eX/eX_lightpanel_01_c
+	surfaceparm alphashadow
+	qer_editorimage	textures/eX/eX_lightpanel_01_d
 	{
 		stage diffuseMap
 		map textures/eX/eX_lightpanel_01_d
 	}
 	{
-		stage normalMap
-		map textures/eX/eX_lightpanel_01_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
-	}
-	{
 		stage normalParallaxMap
 		map textures/eX/eX_lightpanel_01_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
+		normalscale 1.1 1.1 1.5
+		parallaxDepth 0.05
 		tcMod scale .5 .5
 	}
 	{
 		stage specularMap
 		map textures/eX/eX_lightpanel_01_s
 		specularreflectance 0.52050
-		specularexponent 128
-		specularScale 1.5 1.0 1.1 1.3
+		specularexponent 16
+		specularScale 0.36 0.54 0.66
+		roughness 0.124
 	}
 	{
 		map $lightmap
 		blendFunc GL_DST_COLOR GL_ZERO
 	}
 	{
-		map textures/eX/eX_lightpanel_01_c
+		map textures/eX/eX_lightpanel_01_d
 		blendfunc add
-        alphaFunc GE128
-        depthWrite
+		alphaFunc GE128
+		depthWrite
 		rgbGen lightingDiffuse
 	}
 }
@@ -2686,31 +2313,26 @@ textures/eX/eX_lightpanel_01_lit_1000
 textures/eX/eX_light_u201_d
 {
 	q3map_material SolidMetal
-    surfaceparm alphashadow
-	qer_editorimage	textures/eX/eX_light_u201_c
+	surfaceparm alphashadow
+	qer_editorimage	textures/eX/eX_light_u201_d
 	{
 		stage diffuseMap
 		map textures/eX/eX_light_u201_d
 	}
 	{
-		stage normalMap
-		map textures/eX/eX_light_u201_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
-	}
-	{
 		stage normalParallaxMap
 		map textures/eX/eX_light_u201_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
+		normalscale 1.1 1.1 1.5
+		parallaxDepth 0.05
 		tcMod scale .5 .5
 	}
 	{
 		stage specularMap
 		map textures/eX/eX_light_u201_s
 		specularreflectance 0.52050
-		specularexponent 128
-		specularScale 1.5 1.0 1.1 1.3
+		specularexponent 16
+		specularScale 0.36 0.54 0.66
+		roughness 0.124
 	}
 	{
 		map $lightmap
@@ -2721,41 +2343,36 @@ textures/eX/eX_light_u201_d
 textures/eX/eX_light_u201_lit
 {
 	q3map_material SolidMetal
-    surfaceparm alphashadow
-	qer_editorimage	textures/eX/eX_light_u201_c
+	surfaceparm alphashadow
+	qer_editorimage	textures/eX/eX_light_u201_d
 	{
 		stage diffuseMap
 		map textures/eX/eX_light_u201_d
 	}
 	{
-		stage normalMap
-		map textures/eX/eX_light_u201_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
-	}
-	{
 		stage normalParallaxMap
 		map textures/eX/eX_light_u201_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
+		normalscale 1.1 1.1 1.5
+		parallaxDepth 0.05
 		tcMod scale .5 .5
 	}
 	{
 		stage specularMap
 		map textures/eX/eX_light_u201_s
 		specularreflectance 0.52050
-		specularexponent 128
-		specularScale 1.5 1.0 1.1 1.3
+		specularexponent 16
+		specularScale 0.36 0.54 0.66
+		roughness 0.124
 	}
 	{
 		map $lightmap
 		blendFunc GL_DST_COLOR GL_ZERO
 	}
 	{
-		map textures/eX/eX_light_u201_c
+		map textures/eX/eX_light_u201_d
 		blendfunc add
-        alphaFunc GE128
-        depthWrite
+		alphaFunc GE128
+		depthWrite
 		rgbGen lightingDiffuse
 	}
 }
@@ -2763,41 +2380,36 @@ textures/eX/eX_light_u201_lit
 textures/eX/eX_light_u201_lit_1000
 {
 	q3map_material SolidMetal
-    surfaceparm alphashadow
+	surfaceparm alphashadow
 	qer_editorimage	textures/eX/eX_light_u201_c
 	{
 		stage diffuseMap
 		map textures/eX/eX_light_u201_d
 	}
 	{
-		stage normalMap
-		map textures/eX/eX_light_u201_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
-	}
-	{
 		stage normalParallaxMap
 		map textures/eX/eX_light_u201_n
-		normalscale 1.456 1.123 2.287
-		parallaxDepth 128
+		normalscale 1.1 1.1 1.5
+		parallaxDepth 0.05
 		tcMod scale .5 .5
 	}
 	{
 		stage specularMap
 		map textures/eX/eX_light_u201_s
 		specularreflectance 0.52050
-		specularexponent 128
-		specularScale 1.5 1.0 1.1 1.3
+		specularexponent 16
+		specularScale 0.36 0.54 0.66
+		roughness 0.124
 	}
 	{
 		map $lightmap
 		blendFunc GL_DST_COLOR GL_ZERO
 	}
 	{
-		map textures/eX/eX_light_u201_c
+		map textures/eX/eX_light_u201_d
 		blendfunc add
-        alphaFunc GE128
-        depthWrite
+		alphaFunc GE128
+		depthWrite
 		rgbGen lightingDiffuse
 	}
 }
