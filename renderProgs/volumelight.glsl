@@ -55,6 +55,7 @@ const int NUM_SAMPLES = 100;
 
 void main()
 {
+#if 0
 	vec4 lightOrg = var_LightOrg;
 	lightOrg.xyz = lightOrg.xyz / lightOrg.w * 0.5 + 0.5;
 
@@ -79,4 +80,5 @@ void main()
         illuminationDecay *= decay;
     }
     gl_FragColor *= exposure;
+#endif
 }

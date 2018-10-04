@@ -2,7 +2,6 @@
 attribute vec4 attr_TexCoord0;
 uniform vec4	u_Local1; // parallaxScale, 0, 0, 0
 uniform vec2	u_Dimensions;
-
 varying vec4	var_Local1; // parallaxScale, 0, 0, 0
 varying vec2	var_Dimensions;
 
@@ -258,8 +257,8 @@ void main()
 	var_ViewDir = viewDir;
 #endif
 
-	var_Local1 = u_Local1;
 	var_Dimensions = u_Dimensions;
+	var_Local1 = u_Local1;
 }
 
 /*[Fragment]*/
@@ -268,7 +267,6 @@ uniform vec2	u_Dimensions;
 varying vec4	var_Local1; // surfaceType, 0, 0, 0
 varying vec2	var_Dimensions;
 uniform vec4	u_Local1;
-
 #if defined(USE_LIGHTMAP)
 uniform sampler2D u_LightMap;
 #endif
@@ -392,11 +390,11 @@ varying vec4      var_PrimaryLightDir;
 
 float RayIntersectDisplaceMap(vec2 dp, vec2 ds, sampler2D normalMap)
 {
-	if (u_Local1.x == 0.0)
+	if (var_Local1.x == 0.0)
 		return 0.0;
 	
   #if !defined(FAST_PARALLAX)
-	float MAX_SIZE = u_Local1.x / 3.0;//1.25;//1.5;//1.0;
+	float MAX_SIZE = var_Local1.x / 3.0;//1.25;//1.5;//1.0;
 	if (MAX_SIZE > 1.75) MAX_SIZE = 1.75;
 	if (MAX_SIZE < 1.0) MAX_SIZE = 1.0;
 	const int linearSearchSteps = 16;
@@ -463,10 +461,10 @@ float RayIntersectDisplaceMap(vec2 dp, vec2 ds, sampler2D normalMap)
 	}
 #endif
 
-	return bestDepth * u_Local1.x;
+	return bestDepth * var_Local1.x;
 #else //FAST_PARALLAX
 	float depth = SampleDepth(normalMap, dp) - 1.0;
-	return depth * u_Local1.x;
+	return depth * var_Local1.x;
 #endif //FAST_PARALLAX
 }
 #endif //USE_PARALLAXMAP || USE_PARALLAXMAP_NONORMALS
@@ -558,7 +556,7 @@ vec2 ParallaxMapping(vec2 texCoords, vec3 viewDir)
 { 
 	vec2 tex_offset = vec2(1.0 / u_Dimensions.x, 1.0 / u_Dimensions.y);
     // number of depth layers
-	float height_scale = u_Local1.x;
+	float height_scale = var_Local1.x;
     const float minLayers = 10;
     const float maxLayers = 20;
     float numLayers = mix(maxLayers, minLayers, abs(dot(vec3(0.0, 0.0, 1.0), viewDir)));  
@@ -661,7 +659,6 @@ void main()
 	diffuse = texture2D(u_DiffuseMap, texCoords);
 #endif
 
-	
 	float alpha = diffuse.a * var_Color.a;
 	if (u_AlphaTest == 1)
 	{
@@ -740,13 +737,31 @@ void main()
 	EH = clamp(dot(E, H), 0.0, 1.0);
 	NH = clamp(dot(N, H), 0.0, 1.0);
 
-  #if defined(USE_SPECULARMAP)
-	vec4 specular = texture2D(u_SpecularMap, texCoords);
-  #else
-	vec4 specular = vec4(1.0);
-  #endif
-	specular *= u_SpecularScale;
+	vec4 specular;
+	
+	if (var_Local1.g != 0.0)
+	{// Real specMap...
+		specular = texture2D(u_SpecularMap, texCoords);
+		specular.a = ((clamp((1.0 - specular.a), 0.0, 1.0) * 0.5) + 0.5);
+		specular.a = clamp((specular.a * 2.0) * specular.a, 0.2, 0.9);
+	}
+	else
+	{// Fake it...
+		float fakedepth = SampleDepth(u_DiffuseMap, texCoords);
+		specular = vec4(1.0-fakedepth) * diffuse;
+		specular.a = ((clamp((1.0 - fakedepth), 0.0, 1.0) * 0.5) + 0.5);
+		specular.a = clamp((specular.a * 2.0) * specular.a, 0.2, 0.9);
+	}
 
+	if (var_Local1.b > 0.0)
+	{
+		if (length(u_SpecularScale) != 0.0) // Shader Specified...
+			specular *= u_SpecularScale;
+		else // Material Defaults...
+			specular *= var_Local1.b;
+	}
+	else
+		specular *= u_SpecularScale;
 
   #if defined(USE_PBR)
 	// diffuse rgb is base color
@@ -777,8 +792,6 @@ void main()
   #endif
 
   #if defined(USE_PBR)
-	//diffuse.rgb *= CalcDiffuse(diffuse.rgb, NH, EH, roughness);
-	//specular.rgb *= CalcSpecular(specular.rgb, NH, NL, NE, EH, roughness);
 	diffuse.rgb *= diffuse.rgb;
 	specular.rgb *= specular.rgb;
   #endif
@@ -793,8 +806,6 @@ void main()
 	NE = abs(dot(N, E)) + 1e-5;
 	reflectance += CalcSpecular(specular.rgb, NH, NL, NE, EH, roughness);
 
-	//gl_FragColor.rgb  = (((lightColor   * reflectance * (attenuation * NL)) * 2.0) + (lightColor   * (reflectance * specular.a) * (attenuation * NL))) / 3.0;
-	//gl_FragColor.rgb += ambientColor * (diffuse.rgb + specular.rgb);
 	gl_FragColor.rgb  = lightColor   * reflectance * (attenuation * NL);
 	gl_FragColor.rgb += ambientColor * diffuse.rgb;
 
