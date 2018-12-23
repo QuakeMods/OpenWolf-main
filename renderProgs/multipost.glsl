@@ -24,6 +24,9 @@ void main()
 
 /*[Fragment]*/
 uniform sampler2D u_DiffuseMap;
+uniform sampler2D u_TextureMap;
+uniform sampler2D u_ScreenDepthMap;
+uniform sampler2D u_LightMap;
 
 varying vec2	var_TexCoords;
 varying vec4	var_ViewInfo; // zfar / znear, zfar
@@ -31,9 +34,9 @@ varying vec2	var_Dimensions;
 varying vec4	var_Local0; // num_passes, 0, 0, 0
 
 #define SHARPEN_ENABLED
-//#define HDR_ENABLED
-//#define SSAO_ENABLED
-//#define LF_ENABLED
+#define HDR_ENABLED
+#define SSAO_ENABLED
+#define LF_ENABLED
 
 vec2 resolution = var_Dimensions;
 vec2 vTexCoords = var_TexCoords;
@@ -119,20 +122,20 @@ void main(void)
 #else
 	fColor = texture(u_DiffuseMap, vTexCoords).rgb;
 #endif
-	//fColor = erosion(u_DiffuseMap, vTexCoords);
+	fColor += erosion(u_DiffuseMap, vTexCoords);
 
 #if defined(HDR_ENABLED)
-	vec3 hdr = texture(ppsHdrFai, vTexCoords).rgb;
+	vec3 hdr = texture(u_TextureMap, vTexCoords).rgb;
 	fColor += hdr;
 #endif
 
 #if defined(SSAO_ENABLED)
-	float ssao = texture(ppsSsaoFai, vTexCoords).r;
+	float ssao = texture(u_ScreenDepthMap, vTexCoords).r;
 	fColor *= ssao;
 #endif
 
 #if defined(LF_ENABLED)
-	vec3 lf = texture(ppsLfFai, vTexCoords).rgb;
+	vec3 lf = texture(u_LightMap, vTexCoords).rgb;
 	fColor += lf;
 #endif
 

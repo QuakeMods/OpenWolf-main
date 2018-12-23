@@ -343,9 +343,13 @@ void main()
 
 	texCoords += offsetDir.xy * RayIntersectDisplaceMap(texCoords, offsetDir.xy, u_DiffuseMap);
 
-	vec4 color = texture2D(u_DiffuseMap, texCoords);
+	//vec4 color = texture2D(u_DiffuseMap, texCoords);
 
 	//vec4 color  = texture2D(u_DiffuseMap, var_DiffuseTex);
+	
+	vec4 color = texture2D(u_DiffuseMap, var_DiffuseTex) * var_Color;
+	
+	if (color.a <= 0.0) discard;
 	
 	float alpha = color.a * var_Color.a;
 	if (u_AlphaTest == 1)

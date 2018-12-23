@@ -52,7 +52,8 @@ void main(void)
 	vec2 coord = var_TexCoords;
 	vec2 offset = vec2(1.0 / var_Dimensions.s, 1.0 / var_Dimensions.t);
 
-	vec3 c = texture2D(u_TextureMap, coord - (vec2(0.0, 1.0) * offset)).rgb;
+	vec4 origColor = texture2D(u_TextureMap, coord - (vec2(0.0, -1.0) * offset));
+	vec3 c = origColor.rgb;
 
 	//declare stuff
 	const int kSize = (MSIZE-1)/2;
@@ -84,5 +85,5 @@ void main(void)
 		}
 	}
 		
-	gl_FragColor = vec4(final_colour/Z, 1.0);
+	gl_FragColor = vec4(final_colour/Z, origColor.a);
 }

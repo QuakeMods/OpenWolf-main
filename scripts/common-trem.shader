@@ -30,4 +30,3 @@ textures/common-trem/nohumanbuild
 	surfaceparm nomarks
 	surfaceparm nohumanbuild
 }
-

@@ -1,3 +1,5 @@
+// this file lists all the separate shader files
+
 acidtube
 advckit
 alien
@@ -27,6 +29,7 @@ lcannon
 level2
 lgun
 marks
+massdriver
 mdriver
 medistat
 mgturret
@@ -38,7 +41,6 @@ plant_life
 prifle
 psaw
 pulserifle
-q3map2_vega-beta1
 reactor
 rifle
 shells
@@ -51,7 +53,5 @@ tesla
 titan
 trapper
 ui
-utcsud
-vega
 water
 weapons
