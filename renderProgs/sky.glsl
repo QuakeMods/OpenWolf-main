@@ -1,6 +1,4 @@
 /*[Vertex]*/
-//#version 120
-
 uniform mat4	u_ModelViewProjectionMatrix;
 uniform mat4	u_invProjectionMatrix;
 attribute vec3	attr_Position;
