@@ -27,9 +27,9 @@ varying vec2		var_ScreenTex;
 #define BLUR_WIDTH 3.0
 
 // Shall we pixelize randomly the output? -- Sucks!
-//#define RANDOMIZE_PIXELS
+#define RANDOMIZE_PIXELS
 
-//#define APPLY_CONTRAST
+#define APPLY_CONTRAST
 
 #ifdef RANDOMIZE_PIXELS
 //noise producing function to eliminate banding (got it from someone else´s shader):

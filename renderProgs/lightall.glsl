@@ -754,6 +754,36 @@ vec3 sphericalHarmonics(vec3 normal)
 }
 #endif //SPHERICAL_HARMONICS
 
+vec4 hitCube(vec3 ray, vec3 pos, vec3 invSize, float lod, samplerCube tex)
+{
+	// find any hits on cubemap faces facing the camera
+	vec3 scale = (sign(ray) - pos) / ray;
+
+	// find the nearest hit
+	float minScale = min(min(scale.x, scale.y), scale.z);
+
+	// if the nearest hit is behind the camera, ignore
+	// should not be necessary as long as pos is inside the cube
+	//if (minScale < 0.0)
+		//return vec4(0.0);
+
+	// calculate the hit position, that's our texture coordinates
+	vec3 tc = pos + ray * minScale;
+
+	// if the texture coordinates are outside the cube, ignore
+	// necessary since we're not fading out outside the cube
+	if (any(greaterThan(abs(tc), vec3(1.00001))))
+		return vec4(0.0);
+
+	// fade out when approaching the cubemap edges
+	//vec3 fade3 = abs(pos);
+	//float fade = max(max(fade3.x, fade3.y), fade3.z);
+	//fade = clamp(1.0 - fade, 0.0, 1.0);
+
+	//return vec4(textureCubeLod(tex, tc, lod).rgb * fade, fade);
+	return vec4(textureCubeLod(tex, tc, lod).rgb, 1.0);
+}
+
 void main()
 {
 	vec3 viewDir = vec3(0.0), lightColor = vec3(0.0), ambientColor = vec3(0.0), reflectance = vec3(0.0);
@@ -1033,8 +1063,12 @@ void main()
 	// from http://seblagarde.wordpress.com/2012/09/29/image-based-lighting-approaches-and-parallax-corrected-cubemap/
 	vec3 parallax = u_CubeMapInfo.xyz + u_CubeMapInfo.w * viewDir;
 
-	vec3 cubeLightColor = textureCubeLod(u_CubeMap, R + parallax, ROUGHNESS_MIPS * specular.a).rgb * u_EnableTextures.w;
-
+  #if defined(USE_BOX_CUBEMAP_PARALLAX)
+	vec3 cubeLightColor = hitCube(R * u_CubeMapInfo.w, parallax, u_CubeMapInfo.www, ROUGHNESS_MIPS * roughness, u_CubeMap).rgb * u_EnableTextures.w;
+  #else
+	vec3 cubeLightColor = textureCubeLod(u_CubeMap, R + parallax, ROUGHNESS_MIPS * roughness).rgb * u_EnableTextures.w;
+  #endif
+  
 	// normalize cubemap based on last roughness mip (~diffuse)
 	// multiplying cubemap values by lighting below depends on either this or the cubemap being normalized at generation
 	vec3 cubeLightDiffuse = max(textureCubeLod(u_CubeMap, N, ROUGHNESS_MIPS).rgb, 0.5 / 255.0);
