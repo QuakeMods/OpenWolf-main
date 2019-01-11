@@ -485,20 +485,17 @@ uniform vec4   u_LightOrigin;
 
 #define EPSILON 0.00000001
 
-#if defined(USE_PARALLAXMAP) || defined(USE_PARALLAXMAP_NONORMALS)
-  #if defined(USE_PARALLAXMAP)
+#if defined(USE_PARALLAXMAP)
 	float SampleDepth(sampler2D normalMap, vec2 t)
 	{
 		return 1.0 - texture2D(normalMap, t).a;
 	}
-  #endif //USE_PARALLAXMAP
 
 float RayIntersectDisplaceMap(vec2 dp, vec2 ds, sampler2D normalMap)
 {
 	if (u_Local1.x == 0.0)
 		return 0.0;
 	
-  #if !defined(FAST_PARALLAX)
 	float MAX_SIZE = u_Local1.x / 3.0;//1.25;//1.5;//1.0;
 	if (MAX_SIZE > 1.75) MAX_SIZE = 1.75;
 	if (MAX_SIZE < 1.0) MAX_SIZE = 1.0;
@@ -562,12 +559,8 @@ float RayIntersectDisplaceMap(vec2 dp, vec2 ds, sampler2D normalMap)
 #endif
 
 	return bestDepth * u_Local1.x;
-#else //FAST_PARALLAX
-	float depth = SampleDepth(normalMap, dp) - 1.0;
-	return depth * u_Local1.x;
-#endif //FAST_PARALLAX
 }
-#endif //USE_PARALLAXMAP || USE_PARALLAXMAP_NONORMALS
+#endif //USE_PARALLAXMAP
 
 vec3 CalcDiffuse(vec3 diffuseAlbedo, float NH, float EH, float roughness)
 {
@@ -600,6 +593,44 @@ vec3 EnvironmentBRDF(float roughness, float NE, vec3 specular)
 	float v = 1.0 - max(roughness, NE);
 	v *= v * v;
 	return vec3(v) + specular;
+}
+
+float spec_D( float NH, float roughness)
+{
+  // normal distribution
+  // from http://blog.selfshadow.com/publications/s2013-shading-course/karis/s2013_pbs_epic_notes_v2.pdf
+  float alpha = roughness * roughness;
+  float quotient = alpha / max(1e-8,(NH*NH*(alpha*alpha-1.0)+1.0));
+  return (quotient * quotient) / M_PI;
+}
+
+vec3 spec_F( float EH, vec3 F0 )
+{
+  // Fresnel
+  // from http://blog.selfshadow.com/publications/s2013-shading-course/karis/s2013_pbs_epic_notes_v2.pdf
+  float pow2 = pow(2.0, (-5.55473*EH - 6.98316) * EH);
+  return F0 + (vec3(1.0) - F0) * pow2;
+}
+
+float G1( float NV, float k )
+{
+  return NV / (NV*(1.0-k) +  k);
+}
+
+float spec_G(float NL, float NE, float roughness )
+{
+  // GXX Schlick
+  // from http://blog.selfshadow.com/publications/s2013-shading-course/karis/s2013_pbs_epic_notes_v2.pdf
+  float k = max(((roughness + 1.0) * (roughness + 1.0)) / 8.0, 1e-5);
+  return G1(NL,k)*G1(NE,k);
+}
+
+vec3 CalcSpecular( in vec3 specular, in float NH, in float NL, in float NE, in float EH, in float roughness )
+{
+	float distrib = spec_D(NH,roughness);
+	vec3 fresnel = spec_F(EH,specular);
+	float vis = spec_G(NL, NE, roughness);
+	return (distrib * fresnel * vis);
 }
 
 float CalcLightAttenuation(float distance, float radius)
@@ -783,7 +814,6 @@ vec4 hitCube(vec3 ray, vec3 pos, vec3 invSize, float lod, samplerCube tex)
 	//return vec4(textureCubeLod(tex, tc, lod).rgb * fade, fade);
 	return vec4(textureCubeLod(tex, tc, lod).rgb, 1.0);
 }
-
 void main()
 {
 	vec3 viewDir = vec3(0.0), lightColor = vec3(0.0), ambientColor = vec3(0.0), reflectance = vec3(0.0);
@@ -816,7 +846,7 @@ void main()
 	lightColor *= lightmapColor.rgb;
 #endif
 
-	vec2 texCoords = m_TexCoords.xy;	
+	vec2 texCoords = m_TexCoords.xy;
 	
 #ifdef USE_OVERLAY//USE_SWAY
 	if (u_Local4.a > 0.0)
@@ -825,8 +855,6 @@ void main()
 	}
 #endif
 	
-	//vec4 diffuse;
-	//vec4 diffuse = texture2D(u_DiffuseMap, texCoords);
 	vec4 diffuse = BumpyBackground(u_DiffuseMap, texCoords);
 
 #if defined(USE_PARALLAXMAP) || defined(USE_PARALLAXMAP_NONORMALS)
@@ -835,8 +863,6 @@ void main()
 	offsetDir.xy *= tex_offset * -u_Local1.x;//-4.0;//-5.0; // -3.0
 	texCoords += offsetDir.xy * RayIntersectDisplaceMap(texCoords, offsetDir.xy, u_NormalMap);
 #endif
-
-	diffuse = texture2D(u_DiffuseMap, texCoords);
 	
 	float alpha = diffuse.a * var_Color.a;
 	if (u_AlphaTest == 1)
@@ -854,7 +880,6 @@ void main()
 		if (alpha < 0.5)
 			discard;
 	}
-
 
 #if defined(USE_LIGHT) && !defined(USE_FAST_LIGHT)
 	L = var_LightDir.xyz;
@@ -896,20 +921,22 @@ void main()
 		diffuse.rgb = mix( diffuse.rgb, steepDiffuse.rgb, clamp(slope,0.0,1.0));
 	}
 	
-
 #define OVERLAY_HEIGHT 40.0
 
 	if (u_Local5.x > 0.0)
-	{// Have overlay map...
+	{
+		// Have overlay map...
 		vec2 ovCoords = var_TexCoords.xy + vec2(u_Local5.y); // u_Local5.y == sway ammount
 		vec4 overlay = texture2D(u_OverlayMap, ovCoords);
 
 		if (overlay.a > 0.1)
-		{// Have an overlay, and it is visible here... Set it as diffuse instead...
+		{
+			// Have an overlay, and it is visible here... Set it as diffuse instead...
 			diffuse = overlay;
 		}
 		else
-		{// Have an overlay, but it is not visibile at this pixel... Still need to check if we need a shadow casted on this pixel...
+		{
+			// Have an overlay, but it is not visibile at this pixel... Still need to check if we need a shadow casted on this pixel...
 			vec2 ovCoords2 = ovCoords - (tex_offset * OVERLAY_HEIGHT);
 			vec4 overlay2 = texture2D(u_OverlayMap, ovCoords2);
 
@@ -930,15 +957,42 @@ void main()
 		lightColor	= lightmapColor.rgb * lmBrightMult * (var_Color.rgb * 0.66666 + 0.33333); // UQ1:  * 0.66666 + 0.33333 is because they are too dark...
 	#endif
 
-	#if defined(USE_LIGHTMAP)
+  #if defined(USE_SHADOWMAP) 
+	vec2 shadowTex = gl_FragCoord.xy * r_FBufScale;
+	float shadowValue = texture2D(u_ShadowMap, shadowTex).r;
 
-		ambientColor = lightColor;
-		float surfNL = clamp(-dot(var_PrimaryLightDir.xyz, N.xyz/*m_Normal.xyz*/), 0.0, 1.0);
-		lightColor /= max(surfNL, 0.25);
-		ambientColor = clamp(ambientColor - lightColor * surfNL, 0.0, 1.0);
+	// surfaces not facing the light are always shadowed
+	shadowValue *= float(dot(var_Normal.xyz, var_PrimaryLightDir.xyz) > 0.0);
 
-	#endif //defined(USE_LIGHTMAP)
-	
+    #if defined(SHADOWMAP_MODULATE)
+	vec3 shadowColor = min(u_PrimaryLightAmbient, lightColor);
+	//vec3 shadowColor = u_PrimaryLightAmbient * lightColor;
+
+      #if 1
+	// Only shadow when the world light is parallel to the primary light
+	shadowValue = 1.0 + (shadowValue - 1.0) * clamp(dot(L, var_PrimaryLightDir.xyz), 0.0, 1.0);
+      #endif
+	lightColor = mix(shadowColor, lightColor, shadowValue);
+    #endif
+  #endif
+
+  #if !defined(USE_LIGHT_VECTOR)
+	ambientColor = lightColor;
+	float surfNL = clamp(dot(var_Normal.xyz, L), 0.0, 1.0);
+
+	// reserve 25% ambient to avoid black areas on normalmaps
+	lightColor *= 0.75;
+
+	// Scale the incoming light to compensate for the baked-in light angle
+	// attenuation.
+	lightColor /= max(surfNL, 0.25);
+
+	// Recover any unused light as ambient, in case attenuation is over 4x or
+	// light is below the surface
+	ambientColor = max(ambientColor - lightColor * surfNL, vec3(0.0));
+  #else
+	ambientColor = var_ColorAmbient.rgb;
+  #endif	
 	NL = clamp(dot(N, L), 0.0, 1.0);
 	NE = clamp(dot(N, E), 0.0, 1.0);
 	H = normalize(L + E);
@@ -976,7 +1030,8 @@ void main()
 				&& u_Local1.a != 15.0 /* ICE */
 				&& u_Local1.a != 25.0 /* PLASTIC */
 				&& u_Local1.a != 12.0 /* MARBLE */)
-			{// Only if not metalic... Metals should remain nice and shiny...
+			{
+				// Only if not metalic... Metals should remain nice and shiny...
 				specular.rgb *= u_SpecularScale.rgb;
 			}
 		}
@@ -1014,7 +1069,16 @@ void main()
 
   #if defined(USE_PBR)
 	diffuse.rgb *= diffuse.rgb;
-	specular.rgb *= specular.rgb;
+  #endif
+
+    reflectance = CalcDiffuse(diffuse.rgb, NH, EH, roughness);
+
+  #if defined(r_deluxeSpecular)
+    #if defined(USE_LIGHT_VECTOR)
+        reflectance += CalcSpecular(specular.rgb, NH, NL, NE, EH, roughness) * r_deluxeSpecular;
+    #else
+        reflectance += CalcSpecular(specular.rgb, NH, NL, NE, EH, pow(roughness r_deluxeSpecular));
+    #endif
   #endif
 
     H  = normalize(L + E);
@@ -1026,8 +1090,6 @@ void main()
 	float refMult = (specular.r + specular.g + specular.b + specular.a) / 4.0;
 	refMult = 1.0 - refMult;
 	refMult = clamp(refMult, 0.25, 0.75);
-
-	reflectance = diffuse.rgb;
 
 	#if defined(r_deluxeSpecular) || defined(USE_LIGHT_VECTOR)
 		float lambertian = dot(L.xyz,N);
@@ -1042,8 +1104,7 @@ void main()
 		}
 	#endif
 
-
-	gl_FragColor.rgb  += lightColor   * reflectance * (attenuation/* * NL*/);
+	gl_FragColor.rgb += lightColor * reflectance * (attenuation * NL);
 	gl_FragColor.rgb += ambientColor * (diffuse.rgb + (specular.rgb * refMult));
 
 	if (u_Local5.b > 0.0)
@@ -1054,21 +1115,20 @@ void main()
 	}
 	
   #if defined(USE_CUBEMAP)
-	NE = clamp(dot(N, E), 0.0, 1.0);
 	reflectance = EnvironmentBRDF(specular.a * refMult, NE, specular.rgb * refMult);
 
 	vec3 R = reflect(E, N);
 
 	// parallax corrected cubemap (cheaper trick)
 	// from http://seblagarde.wordpress.com/2012/09/29/image-based-lighting-approaches-and-parallax-corrected-cubemap/
-	vec3 parallax = u_CubeMapInfo.xyz + u_CubeMapInfo.w * viewDir;
+	vec3 parallax = u_CubeMapInfo.xyz + u_CubeMapInfo.w * var_vertPos.xyz;
 
   #if defined(USE_BOX_CUBEMAP_PARALLAX)
 	vec3 cubeLightColor = hitCube(R * u_CubeMapInfo.w, parallax, u_CubeMapInfo.www, ROUGHNESS_MIPS * roughness, u_CubeMap).rgb * u_EnableTextures.w;
   #else
 	vec3 cubeLightColor = textureCubeLod(u_CubeMap, R + parallax, ROUGHNESS_MIPS * roughness).rgb * u_EnableTextures.w;
   #endif
-  
+
 	// normalize cubemap based on last roughness mip (~diffuse)
 	// multiplying cubemap values by lighting below depends on either this or the cubemap being normalized at generation
 	vec3 cubeLightDiffuse = max(textureCubeLod(u_CubeMap, N, ROUGHNESS_MIPS).rgb, 0.5 / 255.0);
@@ -1091,18 +1151,11 @@ void main()
 	// not technically correct, but helps make reflections look less unnatural
 	cubeLightColor *= lightColor * (attenuation * NL) + ambientColor;
 
-	gl_FragColor.rgb += cubeLightColor * reflectance * horiz * (u_Local3.a * refMult) * u_CubeMapStrength * 0.5;
-	
 	if (u_Local5.r > 0.0)
 	{
 		// Image based lighting...
-		// view vector reflected with respect to normal
-		vec3 R = reflect(E, N);
-
-		vec3 parallax = u_CubeMapInfo.xyz + u_CubeMapInfo.w * var_vertPos.xyz;
-
-		vec3 ambLighting	= textureCubeLod(u_CubeMap, N + parallax, 7.0 * 7.0).rgb;
-		vec3 speLighting	= textureCubeLod(u_CubeMap, R + parallax, 7.0 * 7.0).rgb;
+        vec3 ambLighting = textureCubeLod(u_CubeMap, N + parallax, ROUGHNESS_MIPS * roughness).rgb * u_EnableTextures.w;
+        vec3 speLighting = textureCubeLod(u_CubeMap, R + parallax, ROUGHNESS_MIPS * roughness).rgb * u_EnableTextures.w;
 
 		vec3 ill = ((ambLighting * 0.6) + (speLighting * 0.4)) * 0.5 + 0.5;
 		ill *= u_Local5.r;
@@ -1111,6 +1164,8 @@ void main()
 		gl_FragColor.rgb = clamp(gl_FragColor.rgb, 0.0, 1.0);
 	}
   #endif
+
+    gl_FragColor.rgb += cubeLightColor * reflectance * horiz * (u_Local3.a * refMult) * u_CubeMapStrength * 0.5;
 
 	#if defined(USE_PRIMARY_LIGHT) || defined(USE_PRIMARY_LIGHT_SPECULAR)
 		if (u_Local6.r > 0.0)
@@ -1147,6 +1202,40 @@ void main()
 			}
 		}
 	#endif
+
+#if defined(USE_PRIMARY_LIGHT) || defined(SHADOWMAP_MODULATE)
+	vec3 L2, H2;
+	float NL2, EH2, NH2;
+
+    L2 = var_PrimaryLightDir.xyz;
+
+    // enable when point lights are supported as primary lights
+    sqrLightDist = dot(L2, L2);
+    L2 /= sqrt(sqrLightDist);
+
+    H2  = normalize(L2 + E); 
+    NL2 = clamp(dot(N, L2), 0.0, 1.0);
+    NL2 = max(1e-8, abs(NL2) );
+    EH2 = max(1e-8, dot(E, H2));
+    NH2 = max(1e-8, dot(N, H2));
+
+    reflectance = CalcSpecular(specular.rgb, NH2, NL2, NE, EH2, roughness);
+
+    #if !defined(SHADOWMAP_MODULATE)
+    reflectance += CalcDiffuse(diffuse.rgb, NH2, EH2, roughness);
+    #endif
+
+    lightColor = u_PrimaryLightColor * var_Color.rgb;
+
+    #if defined(USE_SHADOWMAP)
+	lightColor *= shadowValue;
+    #endif
+
+    // enable when point lights are supported as primary lights
+    lightColor *= CalcLightAttenuation(float(var_PrimaryLightDir.w > 0.0), var_PrimaryLightDir.w / sqrLightDist);
+
+    gl_FragColor.rgb += lightColor * reflectance * NL2;
+  #endif
 
   #if defined(USE_PBR)
 	gl_FragColor.rgb = sqrt(gl_FragColor.rgb);
